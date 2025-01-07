@@ -5,8 +5,10 @@
   --light-color: #F7FAFA;
   --border-default-color: rgba(128, 128, 128, 0.25);
   --dark-input-color: rgba(0, 0, 0, 0.05);
-  --text-light-color: rgba(235, 235, 235, 1);
+  --text-light-color: rgb(221, 221, 221);
+  --link-default-color: rgb(255 236 162);
   --attention-color: rgb(182, 44, 44);
+  --border-selection-color: rgb(182, 44, 44);
 }
 
 html, body {
