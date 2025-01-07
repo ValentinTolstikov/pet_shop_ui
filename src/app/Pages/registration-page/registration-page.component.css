@@ -1,0 +1,151 @@
+@media screen and (width < 600px) {
+
+  .form-container{
+    margin-top: 12px;
+    margin-left: 24px;
+    margin-right: 24px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  h2{
+    margin: 0;
+    font-family: 'JetBrains Mono';
+    font-weight: lighter;
+    color: var(--light-color);
+    font-size: 8pt;
+  }
+
+  body{
+    margin: 0;
+    padding: 12px;
+    width: 100%;
+    height: 100%;
+    background-image: url("/Assets/Imgs/forest-distance.jpg");
+  }
+
+  input{
+
+    text-align: left;
+    margin: 0;
+    font-family: 'JetBrains Mono';
+    font-weight: lighter;
+    color: var(--text-light-color);
+    font-size: 8pt;
+    padding: 6px;
+
+    border: solid 3px var(--border-default-color);
+    border-radius: 18px;
+    background-color: var(--dark-input-color);
+
+    width: max-content;
+    box-sizing: inherit;
+  }
+
+  .header{
+    text-align: center;
+    margin: 0;
+    font-family: 'JetBrains Mono';
+    font-weight: bolder;
+    color: var(--light-color);
+    font-size: 24pt;
+  }
+}
+
+@media screen and (width > 600px) {
+
+  .form-container{
+    margin-top: 12px;
+    margin-left: 48px;
+    margin-right: 48px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  body{
+    margin: 0;
+    padding: 24px;
+    width: 100%;
+    height: 100%;
+    background-image: url("/Assets/Imgs/forest-distance.jpg");
+  }
+
+  h2{
+    margin: 0;
+    font-family: 'JetBrains Mono';
+    font-weight: lighter;
+    color: var(--light-color);
+    font-size: 14pt;
+  }
+
+  input{
+
+    text-align: left;
+    margin: 0;
+    font-family: 'JetBrains Mono';
+    font-weight: lighter;
+    color: var(--text-light-color);
+    font-size: 14pt;
+    padding: 12px;
+
+    border: solid 3px var(--border-default-color);
+    border-radius: 18px;
+    background-color: var(--dark-input-color);
+
+    width: max-content;
+    box-sizing: inherit;
+  }
+
+  .header{
+    text-align: center;
+    margin: 0;
+    font-family: 'JetBrains Mono';
+    font-weight: bolder;
+    color: var(--light-color);
+    font-size: 48pt;
+  }
+}
+
+button{
+  padding: 8px;
+  border-radius: 18px;
+  border: 3px solid var(--border-default-color);
+  background-color: #7F8969;
+  font-family: 'JetBrains Mono';
+  font-weight: lighter;
+  color: var(--light-color);
+  font-size: 14pt;
+}
+
+.error{
+  border: 3px solid var(--attention-color);
+}
+
+.container{
+  margin-top: 10%;
+  border-radius: 24px;
+  padding: 24px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  height: fit-content;
+  backdrop-filter: blur(24px);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.default-top-margin{
+  margin-top: 14px;
+}
+
+a{
+  color: var(--text-light-color);
+  text-decoration: none;
+  text-align: center;
+}

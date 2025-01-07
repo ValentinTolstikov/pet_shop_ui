@@ -1,0 +1,19 @@
+<body>
+  <div class="container">
+    <h1 class="header">Вход</h1>
+    <form
+      class="form-container"
+      (ngSubmit)="onSubmit($event)"
+      [formGroup]="form">
+
+        <h2 class="default-top-margin">Логин</h2>
+        <input formControlName="username" minlength="4">
+        <h2 class="default-top-margin">Пароль</h2>
+        <input formControlName="password">
+        <button type="submit" href="" class="default-top-margin">Войти</button>
+        <a class="default-top-margin">Регистрация</a>
+        <a class="default-top-margin">Забыл пароль</a>
+
+    </form>
+  </div>
+</body>

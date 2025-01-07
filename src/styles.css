@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@import "app/fonts.css";
+
+:root{
+  --dark-color: #000000;
+  --light-color: #F7FAFA;
+  --border-default-color: rgba(128, 128, 128, 0.25);
+  --dark-input-color: rgba(0, 0, 0, 0.05);
+  --text-light-color: rgba(235, 235, 235, 1);
+  --attention-color: rgb(182, 44, 44);
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body{
+  background-color: var(--light-color);
+}
+
+img{
+  width: 100%;
+}
