@@ -1,3 +1,8 @@
-.product-card{
-  max-width: fit-content;
+.category, .item, .tip {
+  margin: 10px;
+  text-align: center;
+}
+
+.cat-img{
+  border-radius: 16px;
 }

@@ -1,0 +1,64 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header>
+  <nav>
+    <ul>
+      <li><a href="category?name=dogs">Dogs</a></li>
+      <li><a href="category?name=cats">Cats</a></li>
+      <li><a href="category?name=fishs">Fish</a></li>
+      <li><a href="category?name=smallpets">Small Pets</a></li>
+    </ul>
+    <div class="search-cart-profile">
+      <input class="search" type="text" placeholder="Search...">
+      <button class="search">🔍</button>
+      <img class="icon" src="/Assets/Imgs/shopping-cart.png" alt="Cart">
+      <img class="icon" src="/Assets/Imgs/user.png" alt="Profile">
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <img src="/Assets/Imgs/cat.jpg" alt="Welcome Cat">
+  <div class="welcome-text">
+    <h1>Welcome to PetPals</h1>
+    <p>The best place for pet care and supplies</p>
+  </div>
+</section>
+
+<section class="shop-by-pet">
+  <h2>Категории животных</h2>
+  <div class="pet-categories">
+    @for (category of Categories; track category.id)
+    {
+      <app-product-card [Category]="category">
+      </app-product-card>
+    }
+  </div>
+</section>
+
+<section class="top-selling-items">
+  <h2>Бестселлеры</h2>
+  <div class="items">
+    <app-selling-item>
+    </app-selling-item>
+    <app-selling-item>
+    </app-selling-item>
+    <app-selling-item>
+    </app-selling-item>
+    <app-selling-item>
+    </app-selling-item>
+  </div>
+</section>
+
+<footer>
+  <div class="social-media">
+    <a target="_blank" href="https://vk.com/valleen"><img class="link" src="/Assets/Imgs/vk_logo.png" alt="VK"></a>
+    <a target="_blank" href="https://github.com/ValentinTolstikov"><img class="link" src="/Assets/Imgs/gh_logo.png" alt="Github"></a>
+    <a target="_blank" href="http://t.me/Nomoreelse"><img class="link" src="/Assets/Imgs/tg_logo.png" alt="TG"></a>
+  </div>
+  <p>© 2025 PetPals</p>
+</footer>
+</body>

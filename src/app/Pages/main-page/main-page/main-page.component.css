@@ -1,0 +1,130 @@
+body {
+  font-family: 'JetBrains Mono';
+  margin: 0;
+  padding: 0;
+}
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+}
+
+header nav ul li {
+  margin-right: 10px;
+}
+
+.search-cart-profile {
+  display: flex;
+  align-items: center;
+  padding-right: 40px;
+}
+
+nav{
+  border-bottom: 1px solid gray;
+}
+
+.search{
+  font-size: larger;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+}
+
+heade {
+  border-bottom: 1px solid gray;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  cursor: alias;
+  font-size: larger;
+}
+
+.hero img {
+  width: 100%;
+  inline-size: -webkit-fill-available;
+  padding: 30px;
+  border-radius: 48px;
+}
+
+.welcome-text {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.shop-by-pet, .top-selling-items, .pet-care-tips {
+  padding: 20px;
+  text-align: center;
+}
+
+@media screen and (width > 900px) {
+  .pet-categories, .items, .tips {
+    display: grid;
+    justify-content: normal;
+    grid-template-columns: auto auto auto auto;
+  }
+}
+
+@media screen and (width < 600px) {
+  .pet-categories, .items, .tips {
+    display: grid;
+    justify-content: normal;
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (width < 900px) and (width > 600px) {
+  .pet-categories, .items, .tips {
+    display: grid;
+    justify-content: normal;
+    grid-template-columns: auto auto auto;
+  }
+}
+
+.category, .item, .tip {
+  margin: 10px;
+  text-align: center;
+}
+
+.img, .icon{
+  width: 32px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.img, .link{
+  width: 32px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.social-media a {
+  margin: 0 10px;
+}
