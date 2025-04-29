@@ -1,6 +1,13 @@
 <div class="card">
-  <img class="card-img" src="/Assets/Imgs/forfishs.png"/>
-  <p>Name of thing</p>
-  <p>Price: 300 p.</p>
-  <button class="add-card">Add to card</button>
+  <img class="card-img" src="{{this.Image}}" (click)="GoToItem()"/>
+  <p class="name">{{this.Name}}</p>
+  <div class="bottom-grid">
+    <p class="price">${{this.Price}}</p>
+    @if (this.AddedToCart)
+    {
+      <button type="button" (click)="Click(this)" active="false" class="add-card">Убрать из корзины</button>
+    } @else {
+      <button type="button" (click)="Click(this)" active="true" class="add-card">Добавить в корзину</button>
+    }
+  </div>
 </div>

@@ -1,20 +1,105 @@
 .card{
   width: 100%;
-  height: fit-content;
-  padding: 12px;
+  padding: 20px;
   inline-size: auto;
-  border: 1px solid black;
-  margin: 8px;
+  margin: 0;
+  border: 1px solid var(--border-default-color);
   border-radius: 24px;
+  background: #f4f4f4;
+}
+
+.card:hover{
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.bottom-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.name{
+  font-family: 'JetBrains Mono', ui-serif;
+  font-weight: 500;
+  text-align: left;
+  font-size: 24px;
+  margin: 6px 0;
+}
+
+.price{
+  font-family: 'JetBrains Mono', ui-serif;
+  text-align: left;
+  font-size: 18px;
+  margin: 6px 0;
+}
+
+.description{
+  text-align: justify;
+  text-align-last: start;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: max-content;
+}
+
+.focused{
+  text-align: start;
+  font-size: larger;
+  font-style: normal;
+  margin: 0px;
+  font-weight: 600;
+  margin-top: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 14px;
+  grid-row-gap: 0px;
 }
 
 .card-img{
+  height: 250px;
   border-radius: 16px;
+  object-fit: cover;
 }
 
-.add-card{
+.add-card[active=true]{
+  padding-top: 12px;
+  padding-bottom: 12px;
   width: 100%;
   font-size: large;
   border-radius: 16px;
-  border: 1px solid black;
+  border: 0;
+  background-color: var(--light-green-color);
+  font-weight: 100;
+  color: #232323;
+}
+
+.add-card[active=true]:hover{
+  background-color: var(--light-color);
+  transition: 0.35s;
+}
+
+.add-card[active=false]:hover{
+  background-color: var(--light-color);
+  transition: 0.35s;
+}
+
+.add-card[active=false]{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 100%;
+  font-size: large;
+  border-radius: 12px;
+  border: 0;
+  background-color: white;
+  font-weight: 100;
+  color: #232323;
 }

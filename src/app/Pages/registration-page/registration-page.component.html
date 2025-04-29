@@ -1,16 +1,17 @@
-<body>
 <div class="container">
-  <h1 class="header">Регистрация</h1>
-  <form class="form-container">
-    <h2 class="default-top-margin">Логин</h2>
-    <input minlength="4">
-    <h2 class="default-top-margin">Пароль</h2>
-    <input>
-    <h2 class="default-top-margin">Повтор пароля</h2>
-    <input>
-    <button type="button" href="" class="default-top-margin">Войти</button>
-    <a class="default-top-margin">Регистрация</a>
-    <a class="default-top-margin">Забыл пароль</a>
+  <form
+    class="form-container">
+    <h1 class="header">Регистрация</h1>
+    <div class="fields-wrapper">
+      <h2 class="default-top-margin lt-container label-text">Логин</h2>
+      <input class="text" formControlName="username" minlength="4">
+      <h2 class="default-top-margin lt-container label-text">Пароль</h2>
+      <input class="text" formControlName="password">
+    </div>
+    <button type="submit" href="" class="default-top-margin">Войти</button>
+    <h2 class="lt-container label-text">
+      Есть аккаунт?
+      <a class="default-top-margin">Войти</a>
+    </h2>
   </form>
 </div>
-</body>

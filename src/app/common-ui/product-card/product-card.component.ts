@@ -1,4 +1,4 @@
-import {Component, input, Input, InputSignal, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {category} from '../../Data/Interfaces/category-card.interface';
 
 @Component({

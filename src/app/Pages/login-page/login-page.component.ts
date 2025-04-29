@@ -1,5 +1,7 @@
-import {Component, input} from '@angular/core';
-import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {Component} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {AuthService} from '../../Data/Services/auth-service.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -10,13 +12,27 @@ import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/
   styleUrl: './login-page.component.css'
 })
 export class LoginPageComponent {
+  form:FormGroup;
 
-  form: FormGroup = new FormGroup({
-    username: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required])
-  })
+  constructor(private authService: AuthService,
+              private fb:FormBuilder,
+              private router: Router,) {
+    this.form = this.fb.group({
+      username: ['',Validators.required],
+      password: ['',Validators.required]
+    });
+  }
 
-  onSubmit(Event: Event) {
+  async onSubmit(Event: Event) {
     console.log(Event);
+    const val = this.form.value;
+
+    if(val.username && val.password){
+      const res = await this.authService.Auth(val.username, val.password);
+      if(res)
+      {
+        await this.router.navigateByUrl('/');
+      }
+    }
   }
 }
