@@ -1,0 +1,23 @@
+footer {
+  margin-top: 8px;
+  text-align: center;
+  padding: 20px;
+  background-color: var(--dark-color);
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.social-media a {
+  margin: 0 10px;
+  filter: invert(1) contrast(10);
+}
+
+.img, .link{
+  width: 32px;
+  margin-left: 8px;
+  margin-right: 8px;
+}

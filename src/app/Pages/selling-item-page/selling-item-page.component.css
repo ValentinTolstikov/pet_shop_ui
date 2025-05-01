@@ -1,0 +1,11 @@
+.container{
+  margin: 18px;
+  padding: 12px;
+  border-radius: 6pt;
+  background: #fff;
+}
+
+.card{
+  display: grid;
+  grid-template-columns:1fr 1fr;
+}

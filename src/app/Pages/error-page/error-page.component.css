@@ -1,0 +1,26 @@
+@media screen and (width < 600px) {
+  p{
+    font-size: 16pt;
+  }
+
+  img{
+    margin: auto;
+    max-width: 50vw;
+  }
+}
+
+.error-wrapper {
+  text-align: center;
+}
+
+@media screen and (width >= 600px) {
+  p{
+    font-size: 32pt;
+  }
+
+  img{
+    margin-top: 32px;
+    max-width: 20vw;
+  }
+}
+

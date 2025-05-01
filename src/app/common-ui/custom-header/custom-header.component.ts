@@ -1,0 +1,21 @@
+import { Component } from '@angular/core';
+import {FaIconComponent} from "@fortawesome/angular-fontawesome";
+import {faCartShopping, faCat, faCircleUser, faCrow, faFishFins, faPaw} from '@fortawesome/free-solid-svg-icons';
+
+@Component({
+  selector: 'app-custom-header',
+    imports: [
+        FaIconComponent
+    ],
+  templateUrl: './custom-header.component.html',
+  styleUrl: './custom-header.component.css'
+})
+export class CustomHeaderComponent {
+
+  protected readonly faCrow = faCrow;
+  protected readonly faCartShopping = faCartShopping;
+  protected readonly faCircleUser = faCircleUser;
+  protected readonly faCat = faCat;
+  protected readonly faPaw = faPaw;
+  protected readonly faFishFins = faFishFins;
+}
