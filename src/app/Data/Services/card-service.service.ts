@@ -10,7 +10,7 @@ import {product_model} from '../Interfaces/product-model.interface';
 export class CardServiceService {
   constructor(private Http: HttpClient) { }
   getCards() : Observable<product_model>  {
-      return this.Http.get<product_model>("http://localhost:25000/Product?page=1&pageSize=1").pipe(catchError(error => {
+      return this.Http.get<product_model>("https://valentintolstikov-petshopapi-2ad0.twc1.net/Product?page=1&pageSize=1").pipe(catchError(error => {
         console.log(error);
         return [];
       }));

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {catchError, take, firstValueFrom} from 'rxjs';
+import {firstValueFrom} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class AuthService {
   public async Auth(Username: string, Password: string): Promise<boolean> {
     let result: boolean = false;
 
-    const task = this.http.post<string>('http://localhost:25000/Login', {Username: Username, Password: Password});
+    const task = this.http.post<string>('https://valentintolstikov-petshopapi-2ad0.twc1.net/Login', {Username: Username, Password: Password});
     const value = await firstValueFrom(task).catch((error) => { result = false; });
 
     if(value){
