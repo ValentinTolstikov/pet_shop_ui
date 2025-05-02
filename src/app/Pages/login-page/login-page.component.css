@@ -11,7 +11,7 @@ body {
     height: fit-content;
     border-radius: 24px;
     border: 1px solid rgba(128, 128, 128, 0.25);
-    background: var(--white-color);
+    background: var(--dark-input-color);
   }
 
   .lt-container{
@@ -28,7 +28,7 @@ body {
     margin: 0;
     font-family: 'JetBrains Mono';
     font-weight: bolder;
-    color: var(--bla);
+    color: var();
     font-size: 24pt;
   }
 }
@@ -37,7 +37,7 @@ body {
   text-align: center;
   margin: 0;
   font-weight: lighter;
-  color: var(--white-color);
+  color: var(--black-color);
 }
 
 input{
@@ -50,7 +50,7 @@ input{
   padding: 12px 20px;
   border: 0;
   border-radius: 18px;
-  background-color: var(--light-green-color);
+  background-color: #d0d0d0;
   width: 100%;
   box-sizing: border-box;
 }
@@ -65,7 +65,7 @@ input{
     height: fit-content;
     border-radius: 24px;
     border: 1px solid rgba(128, 128, 128, 0.25);
-    background: var(--white-color);
+    background: var(--dark-input-color);
   }
 
   .text{
@@ -82,7 +82,7 @@ input{
     margin: 0;
     font-family: 'JetBrains Mono';
     font-weight: bolder;
-    color: var(--white-color);
+    color: var(--bs-black);
     font-size: 48pt;
   }
 }
@@ -92,10 +92,10 @@ button{
   margin-bottom: 6px;
   border-radius: 18px;
   background-color: var(--dark-color);
-  font-family: 'JetBrains Mono';
+  font-family: 'JetBrains Mono', serif;
   font-weight: lighter;
   border: 0;
-  color: var(--light-color);
+  color: var(--white-color);
   font-size: 18pt;
 }
 
@@ -130,7 +130,7 @@ form{
 }
 
 a{
-  color: var(--white-color);
+  color: var(--black-color);
   text-decoration: none;
   text-align: center;
   cursor: pointer;

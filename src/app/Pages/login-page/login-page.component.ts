@@ -35,4 +35,8 @@ export class LoginPageComponent {
       }
     }
   }
+
+  async registerRequired($event: MouseEvent) {
+    await this.router.navigateByUrl('/register');
+  }
 }
