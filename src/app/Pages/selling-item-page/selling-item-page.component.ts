@@ -3,9 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {CustomHeaderComponent} from '../../common-ui/custom-header/custom-header.component';
 import {FooterComponent} from '../../common-ui/footer/footer.component';
 import {NgbCarousel, NgbSlide} from '@ng-bootstrap/ng-bootstrap';
-import {MatCard} from '@angular/material/card';
-import {MatButtonToggle} from '@angular/material/button-toggle';
-import {MatButton, MatIconButton} from '@angular/material/button';
+import {MatButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-selling-item-page',
@@ -14,9 +12,7 @@ import {MatButton, MatIconButton} from '@angular/material/button';
     FooterComponent,
     NgbCarousel,
     NgbSlide,
-    MatButtonToggle,
-    MatButton,
-    MatIconButton
+    MatButton
   ],
   templateUrl: './selling-item-page.component.html',
   styleUrl: './selling-item-page.component.css'

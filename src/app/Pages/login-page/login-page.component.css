@@ -80,7 +80,7 @@ input{
   .header{
     text-align: center;
     margin: 0;
-    font-family: 'JetBrains Mono';
+    font-family: 'JetBrains Mono', serif;
     font-weight: bolder;
     color: var(--bs-black);
     font-size: 48pt;

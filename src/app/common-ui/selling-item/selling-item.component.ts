@@ -1,12 +1,10 @@
 import {Component, Input} from '@angular/core';
-import {NgIf} from '@angular/common';
 import {CardServiceService} from '../../Data/Services/card-service.service';
 import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-selling-item',
   imports: [
-    NgIf
   ],
   templateUrl: './selling-item.component.html',
   styleUrl: './selling-item.component.css'

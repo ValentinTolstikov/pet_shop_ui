@@ -4,7 +4,6 @@ import {category} from '../../../Data/Interfaces/category-card.interface';
 import {SellingItemComponent} from '../../../common-ui/selling-item/selling-item.component';
 import {selling_item} from '../../../Data/Interfaces/selling-item.interface';
 import {CardServiceService} from '../../../Data/Services/card-service.service';
-import {FaIconComponent} from '@fortawesome/angular-fontawesome';
 import {faCartShopping, faCat, faCircleUser, faCrow, faFishFins, faPaw} from '@fortawesome/free-solid-svg-icons';
 import {CustomHeaderComponent} from '../../../common-ui/custom-header/custom-header.component';
 import {FooterComponent} from '../../../common-ui/footer/footer.component';
@@ -14,7 +13,6 @@ import {FooterComponent} from '../../../common-ui/footer/footer.component';
   imports: [
     ProductCardComponent,
     SellingItemComponent,
-    FaIconComponent,
     CustomHeaderComponent,
     FooterComponent
   ],
@@ -50,7 +48,7 @@ export class MainPageComponent {
     {id:8, name:"test4", image:"/Assets/Imgs/forcats.jpg", price: 150.0, description:'длинное описание какогото продукта в 3 строки и все такое, нужно для теста'},
   ];
 
-  constructor(private cardService: CardServiceService){}
+  constructor(){}
 
   protected readonly String = String;
   protected readonly faCircleUser = faCircleUser;
