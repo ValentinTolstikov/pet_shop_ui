@@ -11,10 +11,11 @@ body {
     height: fit-content;
     border-radius: 24px;
     border: 1px solid rgba(128, 128, 128, 0.25);
-    background: var(--normal-color);
+    background: var(--dark-input-color);
   }
 
   .lt-container{
+    margin-top: 12px;
     font-size: 16px;
   }
 
@@ -37,20 +38,20 @@ body {
   text-align: center;
   margin: 0;
   font-weight: lighter;
-  color: var(--white-color);
+  color: var(--black-color);
 }
 
 input{
   text-align: left;
   margin: 0;
-  font-family: 'JetBrains Mono';
+  font-family: 'JetBrains Mono', serif;
   font-weight: lighter;
-  color: var(--white-color);
+  color: var(--black-color);
   font-size: 14pt;
   padding: 12px 20px;
   border: 0;
   border-radius: 18px;
-  background-color: var(--light-green-color);
+  background-color: #d0d0d0;
   width: 100%;
   box-sizing: border-box;
 }
@@ -65,22 +66,23 @@ input{
     height: fit-content;
     border-radius: 24px;
     border: 1px solid rgba(128, 128, 128, 0.25);
-    background: var(--normal-color);
+    background: var(--dark-input-color);
   }
 
   .text{
-    font-size: 16pt;
+    font-size: 12pt;
     padding: 12px 20px;
   }
 
   .lt-container{
+    margin-top: 12px;
     font-size: 24pt;
   }
 
   .header{
     text-align: center;
     margin: 0;
-    font-family: 'JetBrains Mono';
+    font-family: 'JetBrains Mono', serif;
     font-weight: bolder;
     color: var(--black-color);
     font-size: 48pt;
@@ -88,7 +90,7 @@ input{
 }
 
 .fields-wrapper{
-  margin: 32px 0;
+  margin: 18px 0;
 }
 
 button{
@@ -96,10 +98,10 @@ button{
   margin-bottom: 6px;
   border-radius: 18px;
   background-color: var(--dark-color);
-  font-family: 'JetBrains Mono';
+  font-family: 'JetBrains Mono', serif;
   font-weight: lighter;
   border: 0;
-  color: var(--light-color);
+  color: var(--white-color);
   font-size: 18pt;
 }
 
@@ -134,9 +136,9 @@ form{
 }
 
 a{
-  color: var(--white-color);
+  color: var(--black-color);
   text-decoration: none;
   text-align: center;
   cursor: pointer;
-  font-size: larger;
+  font-size: xx-large;
 }

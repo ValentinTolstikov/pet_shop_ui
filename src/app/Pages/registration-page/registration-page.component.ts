@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-registration-page',
@@ -12,4 +13,11 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 })
 export class RegistrationPageComponent {
 
+  constructor(private router: Router) {
+
+  }
+
+  async goToLoginPage($event: MouseEvent) {
+    await this.router.navigate(['/login']);
+  }
 }
