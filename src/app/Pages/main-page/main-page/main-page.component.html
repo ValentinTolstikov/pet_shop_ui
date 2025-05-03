@@ -27,7 +27,7 @@
   <div class="items">
     @for (sellingItem of TopSellingItems; track sellingItem.id)
     {
-      <app-selling-item [Description]="sellingItem.description" [Name]="sellingItem.name" [Price]="sellingItem.price" [Image]="sellingItem.image" >
+      <app-selling-item [Id]="sellingItem.id" [Description]="sellingItem.description" [Name]="sellingItem.name" [Price]="sellingItem.price" [Image]="sellingItem.image" >
       </app-selling-item>
     }
   </div>

@@ -7,6 +7,7 @@ import {CardServiceService} from '../../../Data/Services/card-service.service';
 import {faCartShopping, faCat, faCircleUser, faCrow, faFishFins, faPaw} from '@fortawesome/free-solid-svg-icons';
 import {CustomHeaderComponent} from '../../../common-ui/custom-header/custom-header.component';
 import {FooterComponent} from '../../../common-ui/footer/footer.component';
+import {ProductsServiceService} from '../../../Data/Services/products-service.service';
 
 @Component({
   selector: 'app-main-page',
@@ -38,17 +39,21 @@ export class MainPageComponent {
   ];
 
   public TopSellingItems: selling_item[] = [
-    {id:1, name:"test", image:"/Assets/Imgs/forcats.jpg", price: 100.0, description:'длинное описание какогото продукта в 3 строки и все такое, нужно для теста'},
-    {id:2, name:"test2", image:"/Assets/Imgs/fordogs.jpg", price: 150.0, description:'длинное описание какогото продукта в 3 строки и все такое, нужно для теста'},
-    {id:3, name:"test3", image:"/Assets/Imgs/forcats.jpg", price: 120.0, description:'длинное описание какогото продукта в 3 строки и все такое, нужно для теста'},
-    {id:4, name:"test4", image:"/Assets/Imgs/forcats.jpg", price: 150.0, description:'длинное описание какогото продукта в 3 строки и все такое, нужно для теста'},
-    {id:5, name:"test", image:"/Assets/Imgs/forcats.jpg", price: 100.0, description:'длинное описание какогото продукта в 3 строки и все такое, нужно для теста'},
-    {id:6, name:"test2", image:"/Assets/Imgs/fordogs.jpg", price: 150.0, description:'длинное описание какогото продукта в 3 строки и все такое, нужно для теста'},
-    {id:7, name:"test3", image:"/Assets/Imgs/forcats.jpg", price: 120.0, description:'длинное описание какогото продукта в 3 строки и все такое, нужно для теста'},
-    {id:8, name:"test4", image:"/Assets/Imgs/forcats.jpg", price: 150.0, description:'длинное описание какогото продукта в 3 строки и все такое, нужно для теста'},
   ];
 
-  constructor(){}
+  constructor(private productService: ProductsServiceService) {
+    this.LoadProducts();
+  }
+
+  private async LoadProducts(): Promise<void> {
+    let prods = await this.productService.getAllProducts();
+    prods.subscribe(products => {
+      products.forEach(product => {
+        let newProd: selling_item = {id:product.id, name:product.title, image:"/Assets/Imgs/forcats.jpg", price: product.price, description:product.description};
+        this.TopSellingItems.push(newProd);
+      })
+    })
+  }
 
   protected readonly String = String;
   protected readonly faCircleUser = faCircleUser;

@@ -47,7 +47,7 @@
   text-align: start;
   font-size: larger;
   font-style: normal;
-  margin: 0px;
+  margin: 0;
   font-weight: 600;
   margin-top: 8px;
   display: -webkit-box;
@@ -61,7 +61,7 @@
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr;
   grid-column-gap: 14px;
-  grid-row-gap: 0px;
+  grid-row-gap: 0;
 }
 
 .card-img{
@@ -77,19 +77,19 @@
   font-size: large;
   border-radius: 16px;
   border: 0;
-  background-color: var(--light-green-color);
+  background-color: var(--dark-color);
   font-weight: 100;
   color: #232323;
 }
 
 .add-card[active=true]:hover{
   background-color: var(--light-color);
-  transition: 0.35s;
+  transition: 0.15s;
 }
 
 .add-card[active=false]:hover{
   background-color: var(--light-color);
-  transition: 0.35s;
+  transition: 0.15s;
 }
 
 .add-card[active=false]{
