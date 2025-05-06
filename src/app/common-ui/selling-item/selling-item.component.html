@@ -2,7 +2,7 @@
   <img class="card-img" src="{{this.Image}}" (click)="GoToItem()"/>
   <p class="name">{{this.Name}}</p>
   <div class="bottom-grid">
-    <p class="price">${{this.Price}}</p>
+    <p class="price">{{this.Price}} Р.</p>
     @if (this.AddedToCart)
     {
       <button mat-flat-button type="button" (click)="Click(this)" active="false" class="add-card">Убрать из корзины</button>

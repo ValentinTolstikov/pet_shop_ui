@@ -29,6 +29,8 @@ export class SellingItemPageComponent implements OnInit, OnChanges {
   @Input("Id") Id : number = -1;
   TopSellingItems: selling_item[] = [];
 
+  SelectedCount: number = 1;
+
   Title : string = '';
   Price : number = 0.0;
   Description : string = '';
@@ -78,6 +80,14 @@ export class SellingItemPageComponent implements OnInit, OnChanges {
         })
       })
     })
+  }
+
+  ReduceCnt($event: MouseEvent) {
+    this.SelectedCount -= 1;
+  }
+
+  AddCnt($event: MouseEvent) {
+    this.SelectedCount += 1;
   }
 }
 

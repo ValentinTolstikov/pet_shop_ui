@@ -19,6 +19,8 @@
 .cnt-inp{
   height: 42px;
   width: 42px;
+  padding: 6px;
+  border-radius: 6px;
 }
 
 .items{
@@ -65,3 +67,5 @@
 .check-text{
   vertical-align: center;
 }
+
+

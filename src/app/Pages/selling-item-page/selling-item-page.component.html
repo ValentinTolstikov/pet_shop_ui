@@ -3,12 +3,12 @@
 <div class="mt-2 mx-5 p-3 card flex-conteiner">
     <div class="carousel">
       <ngb-carousel>
-        <ng-template ngbSlide>
-          @for (photo of Photos; track photo)
-          {
+        @for (photo of Photos; track photo)
+        {
+          <ng-template ngbSlide>
             <img class="carousel"  src="{{photo}}">
-          }
-        </ng-template>
+          </ng-template>
+        }
       </ngb-carousel>
     </div>
     <div class="right-content">
@@ -21,9 +21,9 @@
       </div>
 
       <div class="mt-2 mb-4">
-        <button class="btn-op">-</button>
-        <input class="cnt-inp mx-2" value="1">
-        <button class="btn-op">+</button>
+        <button (click)="ReduceCnt($event)" class="btn-op">-</button>
+        <input readonly="true" class="cnt-inp mx-2" value="{{SelectedCount}}">
+        <button (click)="AddCnt($event)" class="btn-op">+</button>
       </div>
 
       <div class="check-container">
