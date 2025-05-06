@@ -64,11 +64,6 @@ a{
     border-radius: 32px;
   }
 
-  .div1:hover { opacity: 0.8; transition: opacity 0.5s; }
-  .div2:hover { opacity: 0.8; transition: opacity 0.5s; }
-  .div3:hover { opacity: 0.8; transition: opacity 0.5s; }
-  .div4:hover { opacity: 0.8; transition: opacity 0.5s; }
-
   .items{
     display: grid;
     row-gap: 8px;

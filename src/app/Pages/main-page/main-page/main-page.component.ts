@@ -8,6 +8,7 @@ import {faCartShopping, faCat, faCircleUser, faCrow, faFishFins, faPaw} from '@f
 import {CustomHeaderComponent} from '../../../common-ui/custom-header/custom-header.component';
 import {FooterComponent} from '../../../common-ui/footer/footer.component';
 import {ProductsServiceService} from '../../../Data/Services/products-service.service';
+import {NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-main-page',
@@ -15,7 +16,8 @@ import {ProductsServiceService} from '../../../Data/Services/products-service.se
     ProductCardComponent,
     SellingItemComponent,
     CustomHeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NgOptimizedImage
   ],
   providers: [CardServiceService],
   templateUrl: './main-page.component.html',
@@ -32,10 +34,10 @@ export class MainPageComponent {
   }
 
   private _Categories: category[] = [
-    {id: 1, name: 'Cats', image: 'forcats.jpg'},
-    {id: 2, name: 'Dogs', image: 'fordogs.jpg'},
-    {id: 3, name: 'Small pets', image: 'forsmallpets.jpg'},
-    {id: 4, name: 'Fishes', image: 'forfishs.jpg'}
+    {id: 1, name: 'Для котов', image: 'forcats.jpg', route: "cats"},
+    {id: 2, name: 'Для собак', image: 'fordogs.jpg', route: "dogs"},
+    {id: 3, name: 'Для маленьких животных', image: 'forsmallpets.jpg', route: "smallpets"},
+    {id: 4, name: 'Для рыбок', image: 'forfishs.jpg', route: "fishs"}
   ];
 
   public TopSellingItems: selling_item[] = [
