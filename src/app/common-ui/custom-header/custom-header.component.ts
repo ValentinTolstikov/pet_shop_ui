@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import {FaIconComponent} from "@fortawesome/angular-fontawesome";
 import {faCartShopping, faCat, faCircleUser, faCrow, faFishFins, faPaw} from '@fortawesome/free-solid-svg-icons';
+import {faDog} from '@fortawesome/free-solid-svg-icons/faDog';
 
 @Component({
   selector: 'app-custom-header',
@@ -18,4 +20,12 @@ export class CustomHeaderComponent {
   protected readonly faCat = faCat;
   protected readonly faPaw = faPaw;
   protected readonly faFishFins = faFishFins;
+  protected readonly faDog = faDog;
+
+  constructor(private router: Router) {
+  }
+
+  GoToMainPage($event: MouseEvent) {
+    this.router.navigateByUrl('/');
+  }
 }
