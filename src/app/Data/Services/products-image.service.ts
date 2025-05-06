@@ -15,6 +15,6 @@ export class ProductsImageService {
 
   public async GetProductImages(productId: number): Promise<Observable<ImgResponse[]>> {
     let params = new HttpParams().set("productId", productId);
-    return this.http.get<ImgResponse[]>(this.dev_host+'Image/Product', {params: params});
+    return this.http.get<ImgResponse[]>(this.prod_host+'Image/Product', {params: params});
   }
 }

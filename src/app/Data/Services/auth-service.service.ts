@@ -17,7 +17,7 @@ export class AuthService {
   public async Auth(Username: string, Password: string): Promise<boolean> {
     let result: boolean = false;
 
-    const task = this.http.post<string>(this.dev_host+'Login', {Username: Username, Password: Password});
+    const task = this.http.post<string>(this.prod_host+'Login', {Username: Username, Password: Password});
     const value = await firstValueFrom(task).catch((error) => { result = false; });
 
     if(value){

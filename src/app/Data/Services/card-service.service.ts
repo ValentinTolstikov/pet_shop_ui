@@ -13,7 +13,7 @@ export class CardServiceService {
 
   constructor(private Http: HttpClient) { }
   getCards() : Observable<product_model>  {
-      return this.Http.get<product_model>(this.dev_host+"Product?page=1&pageSize=1").pipe(catchError(error => {
+      return this.Http.get<product_model>(this.prod_host+"Product?page=1&pageSize=1").pipe(catchError(error => {
         console.log(error);
         return [];
       }));

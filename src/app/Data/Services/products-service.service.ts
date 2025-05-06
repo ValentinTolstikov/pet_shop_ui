@@ -16,11 +16,11 @@ export class ProductsServiceService {
 
   public async getAllProducts(): Promise<Observable<ProductResponse[]>> {
     let params = new HttpParams().set("page", 1).set("pageSize", 10);
-    return this.http.get<ProductResponse[]>(this.dev_host+'Product/GetPage', {params: params});
+    return this.http.get<ProductResponse[]>(this.prod_host+'Product/GetPage', {params: params});
   }
 
   public async getProductById(id: number): Promise<Observable<ProductResponse>> {
     let params = new HttpParams().set("page", 1).set("id", id);
-    return this.http.get<ProductResponse>(this.dev_host+'Product/Get', {params: params});
+    return this.http.get<ProductResponse>(this.prod_host+'Product/Get', {params: params});
   }
 }
