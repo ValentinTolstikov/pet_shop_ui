@@ -83,11 +83,17 @@ export class SellingItemPageComponent implements OnInit, OnChanges {
   }
 
   ReduceCnt($event: MouseEvent) {
-    this.SelectedCount -= 1;
+    if(this.SelectedCount > 1)
+    {
+      this.SelectedCount -= 1;
+    }
   }
 
   AddCnt($event: MouseEvent) {
-    this.SelectedCount += 1;
+    if(this.SelectedCount < this.CountInStock)
+    {
+      this.SelectedCount += 1;
+    }
   }
 }
 

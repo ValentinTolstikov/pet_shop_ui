@@ -25,10 +25,12 @@ export class CategoryPageComponent {
   protected readonly faPaw = faPaw;
   protected readonly faFishFins = faFishFins;
 
+  private category_base_name = '';
+
   public SellingItems: selling_item[] = [];
 
   private async LoadProducts(): Promise<void> {
-    let prods = await this.productService.getAllProducts();
+    let prods = await this.productService.getAllProducts(this.category_base_name);
     prods.subscribe(products => {
       products.forEach(product => {
         let newProd: selling_item = {id:product.id, name:product.title, image:"/Assets/Imgs/forcats.jpg", price: product.price, description:product.description};
@@ -45,6 +47,7 @@ export class CategoryPageComponent {
         router.navigateByUrl("/error");
       }
 
+      this.category_base_name = name;
       this.ResolveName(name);
     });
     this.LoadProducts();

@@ -48,7 +48,7 @@ export class MainPageComponent {
   }
 
   private async LoadProducts(): Promise<void> {
-    let prods = await this.productService.getAllProducts();
+    let prods = await this.productService.getAllProducts(null);
     prods.subscribe(products => {
       products.forEach(product => {
         let newProd: selling_item = {id:product.id, name:product.title, image:"/Assets/Imgs/forcats.jpg", price: product.price, description:product.description};

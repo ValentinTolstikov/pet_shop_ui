@@ -14,8 +14,13 @@ export class ProductsServiceService {
 
   }
 
-  public async getAllProducts(): Promise<Observable<ProductResponse[]>> {
+  public async getAllProducts(filter: string | null = null): Promise<Observable<ProductResponse[]>> {
     let params = new HttpParams().set("page", 1).set("pageSize", 10);
+
+    if(filter !== null && filter.length > 0) {
+      params = params.set("category", filter);
+    }
+
     return this.http.get<ProductResponse[]>(this.prod_host+'Product/GetPage', {params: params});
   }
 

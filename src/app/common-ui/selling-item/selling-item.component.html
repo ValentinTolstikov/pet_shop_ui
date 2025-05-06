@@ -1,5 +1,5 @@
-<div class="card">
-  <img class="card-img" src="{{this.Image}}" (click)="GoToItem()"/>
+<div (click)="GoToItem()" class="card">
+  <img class="card-img" src="{{this.Image}}"/>
   <p class="name">{{this.Name}}</p>
   <div class="bottom-grid">
     <p class="price">{{this.Price}} Р.</p>
