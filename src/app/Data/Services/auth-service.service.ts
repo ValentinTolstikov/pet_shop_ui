@@ -29,19 +29,34 @@ export class AuthService {
   }
 
   private setSession(token: string) {
-    //const expiresAt = moment().add(authResult.expiresIn,'second');
+    let curDate = new Date();
+    curDate.setMinutes(curDate.getMinutes() + 30);
+    const expiresAt = curDate.getTime();
 
     localStorage.setItem('token', token);
-
-    //localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()) );
+    localStorage.setItem("expires_at", JSON.stringify(expiresAt) );
   }
 
   logout() {
     localStorage.removeItem('token');
-    //localStorage.removeItem("expires_at");
+    localStorage.removeItem("expires_at");
   }
 
   public isLoggedIn(): boolean {
-    return (localStorage.getItem('token') != null) && (localStorage.getItem('token') != '');
+    let date = localStorage.getItem('expires_at');
+
+    if (typeof date !== "string") {
+      return false;
+    }
+
+    let exp_date = JSON.parse(date);
+    var dt = new Date(exp_date);
+
+    let diff = dt.getTime() - Date.now();
+
+    let dt2 = new Date(diff);
+    let test = dt2.getTime();
+
+    return (localStorage.getItem('token') != null) && (localStorage.getItem('token') != '') && (test > 0);
   }
 }
