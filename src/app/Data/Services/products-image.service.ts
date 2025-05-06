@@ -7,13 +7,14 @@ import {ImgResponse} from '../Interfaces/ApiResponses/img-response';
   providedIn: 'root'
 })
 export class ProductsImageService {
+  private readonly prod_host: string = 'https://valentintolstikov-petshopapi-2ad0.twc1.net/';
+  private readonly dev_host: string = 'http://localhost:8080/';
 
   constructor(private http: HttpClient) {
-
   }
 
   public async GetProductImages(productId: number): Promise<Observable<ImgResponse[]>> {
     let params = new HttpParams().set("productId", productId);
-    return this.http.get<ImgResponse[]>('https://valentintolstikov-petshopapi-2ad0.twc1.net/Image/Product', {params: params});
+    return this.http.get<ImgResponse[]>(this.dev_host+'Image/Product', {params: params});
   }
 }

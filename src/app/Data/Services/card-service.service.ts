@@ -8,9 +8,12 @@ import {product_model} from '../Interfaces/product-model.interface';
 })
 
 export class CardServiceService {
+  private readonly prod_host: string = 'https://valentintolstikov-petshopapi-2ad0.twc1.net/';
+  private readonly dev_host: string = 'http://localhost:8080/';
+
   constructor(private Http: HttpClient) { }
   getCards() : Observable<product_model>  {
-      return this.Http.get<product_model>("https://valentintolstikov-petshopapi-2ad0.twc1.net/Product?page=1&pageSize=1").pipe(catchError(error => {
+      return this.Http.get<product_model>(this.dev_host+"Product?page=1&pageSize=1").pipe(catchError(error => {
         console.log(error);
         return [];
       }));

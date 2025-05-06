@@ -7,6 +7,9 @@ import {firstValueFrom} from 'rxjs';
 })
 
 export class AuthService {
+  private readonly prod_host: string = 'https://valentintolstikov-petshopapi-2ad0.twc1.net/';
+  private readonly dev_host: string = 'http://localhost:8080/';
+
   private token: string = "";
 
   constructor(private http: HttpClient) { }
@@ -14,7 +17,7 @@ export class AuthService {
   public async Auth(Username: string, Password: string): Promise<boolean> {
     let result: boolean = false;
 
-    const task = this.http.post<string>('https://valentintolstikov-petshopapi-2ad0.twc1.net/Login', {Username: Username, Password: Password});
+    const task = this.http.post<string>(this.dev_host+'Login', {Username: Username, Password: Password});
     const value = await firstValueFrom(task).catch((error) => { result = false; });
 
     if(value){

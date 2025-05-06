@@ -9,3 +9,58 @@
   display: grid;
   grid-template-columns:1fr 1fr;
 }
+
+.check-container{
+  display: flex;
+  flex-direction: row;
+  vertical-align: center;
+}
+
+.cnt-inp{
+  height: 42px;
+  width: 42px;
+}
+
+.items{
+  display: grid;
+  row-gap: 32px;
+  column-gap: 32px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.btn-op{
+  font-size: 16px;
+  height: 42px;
+  width: 42px;
+  background: var(--dark-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+.carousel{
+  max-height: 250pt;
+  max-width: 250pt;
+  min-width: 250pt;
+  min-height: 250pt;
+}
+
+.btn-buy{
+  height: 54px;
+  width: 220px;
+}
+
+.right-content{
+  width: 60vw;
+}
+
+.flex-conteiner{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.check-text{
+  vertical-align: center;
+}

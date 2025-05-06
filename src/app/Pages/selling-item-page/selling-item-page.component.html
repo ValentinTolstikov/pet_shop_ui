@@ -1,27 +1,46 @@
 <app-custom-header/>
 
-<div class="container-sm mt-2 p-3 card row-cols-md-2" >
-    <div class="col">
+<div class="mt-2 mx-5 p-3 card flex-conteiner">
+    <div class="carousel">
       <ngb-carousel>
         <ng-template ngbSlide>
           @for (photo of Photos; track photo)
           {
-            <img class="mh-100 mw-100"  src="{{photo}}">
+            <img class="carousel"  src="{{photo}}">
           }
         </ng-template>
       </ngb-carousel>
     </div>
-    <div class="col">
-      <h2>{{Title}}</h2>
-      <h2>{{Price}}$</h2>
-      <p>{{Description}}</p>
-      <h5>{{CountInStock}}</h5>
+    <div class="right-content">
+      <h2 class="mt-1">{{Title}}</h2>
+      <h3 class="mt-2 fw-light">{{Price}}р</h3>
+      <p class="mt-5">{{Description}}</p>
+      <div class="mt-3 check-container">
+        <mat-icon class="check-text" fontIcon="check"></mat-icon>
+        <h5 class="mx-2 check-text">В наличии - {{CountInStock}}</h5>
+      </div>
 
-      <div class="row-cols-md-2">
-        <button mat-flat-button>Купить сейчас</button>
-        <button mat-flat-button>Добавить в корзину</button>
+      <div class="mt-2 mb-4">
+        <button class="btn-op">-</button>
+        <input class="cnt-inp mx-2" value="1">
+        <button class="btn-op">+</button>
+      </div>
+
+      <div class="check-container">
+        <button class="col-md-4 btn-buy fs-5" mat-flat-button>Купить сейчас</button>
+        <button class="col-md-4 btn-buy mx-2 fs-5" mat-flat-button>В корзину</button>
       </div>
     </div>
+</div>
+
+<h2 class="mx-5">Вам может понравиться</h2>
+
+<div class="card px-4 mx-5 py-4 mt-3 items">
+  @for (sellingItem of TopSellingItems; track sellingItem.id)
+  {
+    <app-selling-item [Id]="sellingItem.id" [Description]="sellingItem.description" [Name]="sellingItem.name" [Price]="sellingItem.price" [Image]="sellingItem.image" >
+    </app-selling-item>
+  }
 </div>
 
 <app-footer></app-footer>

@@ -2,10 +2,12 @@ import {AfterViewInit, Component, Input} from '@angular/core';
 import {CardServiceService} from '../../Data/Services/card-service.service';
 import {Router} from '@angular/router';
 import {ProductsImageService} from '../../Data/Services/products-image.service';
+import {MatButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-selling-item',
   imports: [
+    MatButton
   ],
   templateUrl: './selling-item.component.html',
   styleUrl: './selling-item.component.css'
