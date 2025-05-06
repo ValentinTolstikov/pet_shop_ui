@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 import {CustomHeaderComponent} from '../../common-ui/custom-header/custom-header.component';
 import {FooterComponent} from '../../common-ui/footer/footer.component';
@@ -25,7 +25,7 @@ import {Observable} from 'rxjs';
   templateUrl: './selling-item-page.component.html',
   styleUrl: './selling-item-page.component.css'
 })
-export class SellingItemPageComponent implements OnInit {
+export class SellingItemPageComponent implements OnInit, OnChanges {
   @Input("Id") Id : number = -1;
   TopSellingItems: selling_item[] = [];
 
@@ -43,14 +43,23 @@ export class SellingItemPageComponent implements OnInit {
     })))
   }
 
-  constructor(router: Router, private fb : ActivatedRoute, private itemService: ProductsServiceService,
+  ngOnChanges(): void {
+  }
+
+  constructor(private router: Router, private fb : ActivatedRoute, private itemService: ProductsServiceService,
               private imgService: ProductsImageService) {
-    fb.params.subscribe(params => {this.Id = params["id"];});
+    fb.params.subscribe(params => {
+      this.Id = params["id"];
+      this.LoadImgs();
+      this.LoadData();
+    });
     if (this.Id == -1) {
       router.navigateByUrl('/error');
     }
+  }
 
-    itemService.getProductById(this.Id).then((product) => {
+  LoadData(){
+    this.itemService.getProductById(this.Id).then((product) => {
       product.subscribe(product => {
         this.Title = product.title;
         this.Price = product.price;
@@ -58,8 +67,11 @@ export class SellingItemPageComponent implements OnInit {
         this.CountInStock = product.countInStock;
       })
     });
+  }
 
-    imgService.GetProductImages(this.Id).then((images) => {
+  LoadImgs() {
+    this.Photos = [];
+    this.imgService.GetProductImages(this.Id).then((images) => {
       images.subscribe(image => {
         image.forEach(image => {
           this.Photos.push(image.data);
@@ -68,3 +80,4 @@ export class SellingItemPageComponent implements OnInit {
     })
   }
 }
+

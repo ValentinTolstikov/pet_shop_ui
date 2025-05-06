@@ -39,6 +39,7 @@
 }
 
 .carousel{
+  color: black;
   max-height: 250pt;
   max-width: 250pt;
   min-width: 250pt;
