@@ -3,14 +3,11 @@
 <h1>Товары категории {{CategoryName}}</h1>
 
 <section class="layout">
-  <app-selling-item></app-selling-item>
-  <app-selling-item></app-selling-item>
-  <app-selling-item></app-selling-item>
-  <app-selling-item></app-selling-item>
-  <app-selling-item></app-selling-item>
-  <app-selling-item></app-selling-item>
-  <app-selling-item></app-selling-item>
-  <app-selling-item></app-selling-item>
+  @for (sellingItem of SellingItems; track sellingItem.id)
+  {
+    <app-selling-item [Id]="sellingItem.id" [Description]="sellingItem.description" [Name]="sellingItem.name" [Price]="sellingItem.price" [Image]="sellingItem.image" >
+    </app-selling-item>
+  }
 </section>
 
 <app-footer/>
