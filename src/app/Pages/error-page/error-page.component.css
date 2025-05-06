@@ -1,6 +1,8 @@
 @media screen and (width < 600px) {
   p{
     font-size: 16pt;
+    max-width: 60%;
+    margin: auto;
   }
 
   img{
@@ -16,6 +18,8 @@
 @media screen and (width >= 600px) {
   p{
     font-size: 32pt;
+    max-width: 60%;
+    margin: auto;
   }
 
   img{
