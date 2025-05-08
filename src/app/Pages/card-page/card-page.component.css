@@ -1,0 +1,89 @@
+@media screen and (width >= 800px) {
+  .container {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    gap: 0px 12px;
+    grid-template-areas:
+    "A B";
+  }
+
+  .A {
+    padding: 12px;
+    grid-area: A;
+    margin: 12px 6px 12px 12px;
+    height: fit-content;
+  }
+  .B {
+    grid-area: B;
+    margin: 12px 12px 12px 6px;
+  }
+}
+
+div{
+  font-family: 'JetBrains Mono', ui-serif;
+}
+
+@media screen and (width < 800px) {
+  .container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    gap: 0px 12px;
+    grid-template-areas:
+    "A"
+    "B";
+  }
+
+  .A {
+    padding: 12px;
+    grid-area: A;
+    margin: 12px 12px 12px 12px;
+    height: fit-content;
+  }
+  .B {
+    grid-area: B;
+    margin: 12px 12px 12px 12px;
+  }
+}
+
+.btn-billing{
+  padding: 12px;
+  border-radius: 12px;
+  border: 0;
+  font-size: 18pt;
+  color: white;
+  background: var(--dark-color);
+}
+
+.pg-cnt{
+  min-height: 100%;
+}
+
+.error-wrapper{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 32px;
+}
+
+.btn-billing:hover{
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
+.error-img{
+  width: 250px;
+  height: 250px;
+}
+
+.error-text{
+  font-size: 18pt;
+}
+
+.container-summary{
+  padding: 12px;
+}
+

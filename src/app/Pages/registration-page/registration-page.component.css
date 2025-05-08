@@ -16,7 +16,7 @@ body {
 
   .lt-container{
     margin-top: 12px;
-    font-size: 16px;
+    font-size: 12px;
   }
 
   .text{
@@ -27,10 +27,10 @@ body {
   .header{
     text-align: center;
     margin: 0;
-    font-family: 'JetBrains Mono';
+    font-family: 'JetBrains Mono', serif;
     font-weight: bolder;
     color: var(--white-color);
-    font-size: 24pt;
+    font-size: 18pt;
   }
 }
 
@@ -76,7 +76,7 @@ input{
 
   .lt-container{
     margin-top: 12px;
-    font-size: 24pt;
+    font-size: 14pt;
   }
 
   .header{
@@ -85,7 +85,7 @@ input{
     font-family: 'JetBrains Mono', serif;
     font-weight: bolder;
     color: var(--black-color);
-    font-size: 48pt;
+    font-size: 32pt;
   }
 }
 
@@ -140,5 +140,5 @@ a{
   text-decoration: none;
   text-align: center;
   cursor: pointer;
-  font-size: xx-large;
+  font-size: large;
 }

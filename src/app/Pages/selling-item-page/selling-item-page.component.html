@@ -1,6 +1,6 @@
 <app-custom-header/>
 
-<div class="mt-2 mx-5 p-3 card flex-conteiner">
+<div class="mt-2 mx-5 p-3 card flex-container">
     <div class="carousel">
       <ngb-carousel>
         @for (photo of Photos; track photo)
@@ -20,16 +20,22 @@
         <h5 class="mx-2 check-text">В наличии - {{CountInStock}}</h5>
       </div>
 
-      <div class="mt-2 mb-4">
-        <button (click)="ReduceCnt($event)" class="btn-op">-</button>
-        <input readonly="true" class="cnt-inp mx-2" value="{{SelectedCount}}">
-        <button (click)="AddCnt($event)" class="btn-op">+</button>
-      </div>
+      @if (!InCart) {
+        <div class="mt-2 mb-4">
+          <button (click)="ReduceCnt($event)" class="btn-op">-</button>
+          <input readonly="true" (click)="AddToCart($event)" class="cnt-inp mx-2" value="{{SelectedCount}}">
+          <button (click)="AddCnt($event)" class="btn-op">+</button>
+        </div>
 
-      <div class="check-container">
-        <button class="col-md-4 btn-buy fs-5" mat-flat-button>Купить сейчас</button>
-        <button class="col-md-4 btn-buy mx-2 fs-5" mat-flat-button>В корзину</button>
-      </div>
+        <div class="check-container">
+          <button class="col-md-4 btn-buy mx-2 fs-5" mat-flat-button>В корзину</button>
+        </div>
+      } @else {
+        <div class="check-container">
+          <button class="col-md-4 btn-buy fs-5" mat-flat-button>Товар уже в корзине</button>
+        </div>
+      }
+
     </div>
 </div>
 

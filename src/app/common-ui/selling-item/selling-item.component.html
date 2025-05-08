@@ -1,6 +1,6 @@
-<div (click)="GoToItem()" class="card">
-  <img class="card-img" src="{{this.Image}}"/>
-  <p class="name">{{this.Name}}</p>
+<div class="card">
+  <img (click)="GoToItem()" class="card-img" src="{{this.Image}}"/>
+  <p (click)="GoToItem()" class="name">{{this.Name}}</p>
   <div class="bottom-grid">
     <p class="price">{{this.Price}} Р.</p>
     @if (this.AddedToCart)

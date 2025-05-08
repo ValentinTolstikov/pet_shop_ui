@@ -1,0 +1,46 @@
+.container {  display: grid;
+  grid-template-columns: 144px Auto;
+  box-sizing: border-box;
+  grid-template-rows: 1fr;
+  padding: 12px 0px;
+  border-bottom: 1px solid darkgrey;
+  gap: 0px 12px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "A B";
+}
+
+img{
+  border-radius: 12px;
+  width: 144px;
+  height: 144px;
+}
+
+.A { grid-area: A; }
+
+.B {
+  grid-area: B;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-op{
+  font-size: 16px;
+  height: 42px;
+  width: 42px;
+  background: var(--dark-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+.del{
+  margin-left: 6px;
+}
+
+.cnt-inp{
+  height: 42px;
+  width: 42px;
+  padding: 6px;
+  border-radius: 6px;
+}

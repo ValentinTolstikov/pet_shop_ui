@@ -24,8 +24,9 @@
     </ul>
     <div class="search-cart-profile">
       <input class="search" type="text" placeholder="Search...">
-      <fa-icon size="2xl" [inverse]="true" [icon]="faCartShopping"/>
-      <fa-icon size="2xl" [inverse]="true" [icon]="faCircleUser"/>
+      <fa-icon size="2xl" (click)="GoToCart($event)" [icon]="faCartShopping">
+      </fa-icon>
+      <fa-icon size="2xl" (click)="GoToProfile($event)" [icon]="faCircleUser"/>
     </div>
   </nav>
 </header>

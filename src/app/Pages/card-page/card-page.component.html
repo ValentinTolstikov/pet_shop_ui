@@ -1,1 +1,34 @@
-<p>card-page works!</p>
+<app-custom-header></app-custom-header>
+
+@if (selling_items.length>0) {
+  <div class="pg-cnt">
+    <mat-card class="container">
+      <mat-card class="A">
+        @for (item of selling_items; track item)
+        {
+          <app-product-cart-item (messageChange)="handleChange($event)" (messageEvent)="handleMessage($event)" [Id]=item.id [ProdCnt]=item.count></app-product-cart-item>
+        }
+      </mat-card>
+      <div class="B">
+        <mat-card class="container-summary">
+          <h3>Содержимое заказа</h3>
+          <mat-divider/>
+          <p>Подытог. (Колличество позиций - {{CntItems}}): {{ProductsPrice}} p.</p>
+          <p>Комиссия сервиса: 50 p.</p>
+          <mat-divider/>
+          <h3>Итог: {{TotalPrice}} p.</h3>
+          <button class="btn-billing">Перейти к оформлению</button>
+        </mat-card>
+      </div>
+    </mat-card>
+  </div>
+} @else {
+  <div class="pg-cnt">
+    <div class="error-wrapper">
+      <p class="error-text">В вашей корзине сейчас пусто.</p>
+      <img class="error-img" src="/Assets/Imgs/not_found_cat.svg">
+    </div>
+  </div>
+}
+
+<app-footer></app-footer>

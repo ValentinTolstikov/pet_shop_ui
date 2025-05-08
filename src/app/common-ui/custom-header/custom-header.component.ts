@@ -21,11 +21,20 @@ export class CustomHeaderComponent {
   protected readonly faPaw = faPaw;
   protected readonly faFishFins = faFishFins;
   protected readonly faDog = faDog;
+  iconColor: string = 'gray';
 
   constructor(private router: Router) {
   }
 
   GoToMainPage($event: MouseEvent) {
     this.router.navigateByUrl('/');
+  }
+
+  GoToCart($event: MouseEvent) {
+    this.router.navigateByUrl('/cart');
+  }
+
+  GoToProfile($event: MouseEvent) {
+    this.router.navigateByUrl('/profile');
   }
 }

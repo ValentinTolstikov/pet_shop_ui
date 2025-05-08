@@ -9,7 +9,8 @@ import {ProductsImageService} from '../../Data/Services/products-image.service';
 import {MatIcon} from '@angular/material/icon';
 import {SellingItemComponent} from '../../common-ui/selling-item/selling-item.component';
 import {selling_item} from '../../Data/Interfaces/selling-item.interface';
-import {Observable} from 'rxjs';
+import {elementAt, Observable} from 'rxjs';
+import {CartServiceService} from '../../Data/Services/cart-service.service';
 
 @Component({
   selector: 'app-selling-item-page',
@@ -36,6 +37,8 @@ export class SellingItemPageComponent implements OnInit, OnChanges {
   Description : string = '';
   CountInStock : number = 0;
 
+  InCart: boolean = false;
+
   protected Photos: string[] = [];
 
   ngOnInit(): void {
@@ -43,13 +46,20 @@ export class SellingItemPageComponent implements OnInit, OnChanges {
       let test = new selling_item(pr.id,'',pr.description,pr.price,pr.title);
       this.TopSellingItems.push(test);
     })))
+    try {
+      let res = this.cartService.IsAddedToCart(this.Id);
+      this.InCart = res;
+    }
+    catch(err) {
+      console.log(err);
+    }
   }
 
   ngOnChanges(): void {
   }
 
   constructor(private router: Router, private fb : ActivatedRoute, private itemService: ProductsServiceService,
-              private imgService: ProductsImageService) {
+              private imgService: ProductsImageService, private cartService: CartServiceService) {
     fb.params.subscribe(params => {
       this.Id = params["id"];
       this.LoadImgs();
@@ -94,6 +104,17 @@ export class SellingItemPageComponent implements OnInit, OnChanges {
     {
       this.SelectedCount += 1;
     }
+  }
+
+  AddToCart(event: MouseEvent) {
+    if(this.InCart){
+      this.cartService.DeleteFromCart(this.Id);
+    }
+    else {
+      this.cartService.AddProductToCart(this.Id, this.SelectedCount);
+    }
+
+    this.InCart = !this.InCart;
   }
 }
 

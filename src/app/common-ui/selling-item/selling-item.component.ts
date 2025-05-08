@@ -1,8 +1,8 @@
 import {AfterViewInit, Component, Input} from '@angular/core';
-import {CardServiceService} from '../../Data/Services/card-service.service';
-import {Router, RouterLink} from '@angular/router';
+import {Router} from '@angular/router';
 import {ProductsImageService} from '../../Data/Services/products-image.service';
 import {MatButton} from '@angular/material/button';
+import {CartServiceService} from '../../Data/Services/cart-service.service';
 
 @Component({
   selector: 'app-selling-item',
@@ -14,11 +14,12 @@ import {MatButton} from '@angular/material/button';
 })
 export class SellingItemComponent implements AfterViewInit {
 
-  constructor(private cardService: CardServiceService,private router: Router,private imgService: ProductsImageService) {
+  constructor(private router: Router,private imgService: ProductsImageService, private cartService: CartServiceService) {
   }
 
   ngAfterViewInit() {
     this.LoadImg();
+    this.AddedToCart = this.cartService.IsAddedToCart(this.Id);
   }
 
   public LoadImg() {
@@ -47,10 +48,8 @@ export class SellingItemComponent implements AfterViewInit {
   {
     event.AddedToCart = !event.AddedToCart;
     try {
-      var array = this.cardService.getCards();
-      array.forEach(card => {
-        console.log(card);
-      })
+      //var array = this.cardService.getCards();
+      this.cartService.AddProductToCart(this.Id, 1);
     }
     catch(error) {
       console.error(error);

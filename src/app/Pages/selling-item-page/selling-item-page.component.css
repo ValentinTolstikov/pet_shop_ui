@@ -10,6 +10,10 @@
   grid-template-columns:1fr 1fr;
 }
 
+div{
+  font-family: 'JetBrains Mono', ui-serif;
+}
+
 .check-container{
   display: flex;
   flex-direction: row;
@@ -57,7 +61,7 @@
   width: 60vw;
 }
 
-.flex-conteiner{
+.flex-container{
   display: flex;
   justify-content: center;
   flex-direction: row;

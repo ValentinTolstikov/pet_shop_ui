@@ -38,6 +38,15 @@ a{
   font-size: x-large;
 }
 
+fa-icon {
+  color: white !important;
+}
+
+fa-icon:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
 @media screen and (width <= 600px) {
   header nav ul {
     margin: 0;

@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {AuthService} from '../../Data/Services/auth-service.service';
 import {Router} from '@angular/router';
+import {CartServiceService} from '../../Data/Services/cart-service.service';
 
 @Component({
   selector: 'app-login-page',
@@ -16,7 +17,8 @@ export class LoginPageComponent {
 
   constructor(private authService: AuthService,
               private fb:FormBuilder,
-              private router: Router,) {
+              private router: Router,
+              private cartService: CartServiceService) {
     this.form = this.fb.group({
       username: ['',Validators.required],
       password: ['',Validators.required]
@@ -31,6 +33,7 @@ export class LoginPageComponent {
       const res = await this.authService.Auth(val.username, val.password);
       if(res)
       {
+        this.cartService.ClearCart();
         await this.router.navigateByUrl('/');
       }
     }

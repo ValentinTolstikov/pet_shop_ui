@@ -3,3 +3,7 @@
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 1fr;
 }
+
+div{
+  font-family: 'JetBrains Mono', ui-serif;
+}

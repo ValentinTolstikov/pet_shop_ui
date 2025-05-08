@@ -1,5 +1,7 @@
 <div class="container">
   <form
+    (ngSubmit)="onSubmit($event)"
+    [formGroup]="form"
     class="form-container">
     <h1 class="header">Регистрация</h1>
     <div class="fields-wrapper">
@@ -7,8 +9,12 @@
       <input class="text" formControlName="username" minlength="4">
       <h2 class="default-top-margin lt-container label-text">Пароль</h2>
       <input class="text" formControlName="password">
+      <h2 class="default-top-margin lt-container label-text">Почта</h2>
+      <input class="text" type="email" formControlName="email" minlength="4">
+      <h2 class="default-top-margin lt-container label-text">Дата рождения</h2>
+      <input class="text" type="date" formControlName="dateBorn">
     </div>
-    <button type="submit" href="" class="default-top-margin">Войти</button>
+    <button type="submit" class="default-top-margin">Войти</button>
     <h2 class="lt-container label-text">
       Есть аккаунт?
       <a (click)="goToLoginPage($event)" class="default-top-margin">Войти</a>

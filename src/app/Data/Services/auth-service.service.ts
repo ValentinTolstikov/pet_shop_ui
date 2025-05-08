@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {firstValueFrom} from 'rxjs';
+import {HttpClient, HttpResponse} from '@angular/common/http';
+import {firstValueFrom, Subscription} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +22,19 @@ export class AuthService {
 
     if(value){
       this.setSession(value);
+      result = true;
+    }
+
+    return result;
+  }
+
+  public async Register(Username: string, Password: string, Email: string, DateBorn: Date): Promise<boolean> {
+    let result: boolean = false;
+
+    const task = this.http.post<HttpResponse<any>>(this.prod_host+'Registration', {Username: Username, Password: Password, Email: Email, DateOfBirth: DateBorn});
+    let val = await firstValueFrom(task);
+
+    if(val.status == 204){
       result = true;
     }
 

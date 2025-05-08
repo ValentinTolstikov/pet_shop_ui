@@ -3,7 +3,6 @@ import {ProductCardComponent} from '../../../common-ui/product-card/product-card
 import {category} from '../../../Data/Interfaces/category-card.interface';
 import {SellingItemComponent} from '../../../common-ui/selling-item/selling-item.component';
 import {selling_item} from '../../../Data/Interfaces/selling-item.interface';
-import {CardServiceService} from '../../../Data/Services/card-service.service';
 import {faCartShopping, faCat, faCircleUser, faCrow, faFishFins, faPaw} from '@fortawesome/free-solid-svg-icons';
 import {CustomHeaderComponent} from '../../../common-ui/custom-header/custom-header.component';
 import {FooterComponent} from '../../../common-ui/footer/footer.component';
@@ -19,7 +18,6 @@ import {NgOptimizedImage} from '@angular/common';
     FooterComponent,
     NgOptimizedImage
   ],
-  providers: [CardServiceService],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css'
 })
