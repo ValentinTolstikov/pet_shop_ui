@@ -47,6 +47,8 @@ export class CardPageComponent implements OnDestroy {
   private async loadData(): Promise<void> {
     this.selling_items = [];
     this.CntItems = 0;
+    this.ProductsPrice = 0;
+    this.TotalPrice = 0;
 
     let itemsFromCart = this.cartService.GetCartItems();
 
