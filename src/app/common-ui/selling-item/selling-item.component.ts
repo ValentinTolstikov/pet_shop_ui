@@ -1,13 +1,11 @@
 import {AfterViewInit, Component, Input} from '@angular/core';
 import {Router} from '@angular/router';
 import {ProductsImageService} from '../../Data/Services/products-image.service';
-import {MatButton} from '@angular/material/button';
 import {CartServiceService} from '../../Data/Services/cart-service.service';
 
 @Component({
   selector: 'app-selling-item',
   imports: [
-    MatButton
   ],
   templateUrl: './selling-item.component.html',
   styleUrl: './selling-item.component.css'
@@ -44,12 +42,17 @@ export class SellingItemComponent implements AfterViewInit {
     this.router.navigateByUrl('/items/'+this.Id);
   }
 
-  public Click(event : SellingItemComponent):void
+  public Click(event : MouseEvent):void
   {
-    event.AddedToCart = !event.AddedToCart;
     try {
       //var array = this.cardService.getCards();
-      this.cartService.AddProductToCart(this.Id, 1);
+      if(!this.AddedToCart){
+        this.cartService.AddProductToCart(this.Id, 1);
+      }
+      else {
+        this.cartService.DeleteFromCart(this.Id);
+      }
+      this.AddedToCart = !this.AddedToCart;
     }
     catch(error) {
       console.error(error);

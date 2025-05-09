@@ -1,9 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {UserServiceService} from '../../Data/Services/user-service.service';
+import {MatDivider} from '@angular/material/divider';
 
 @Component({
   selector: 'app-user-profile',
-  imports: [],
+  imports: [
+    MatDivider
+  ],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css'
 })

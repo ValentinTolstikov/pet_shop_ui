@@ -5,9 +5,9 @@
     <p class="price">{{this.Price}} Р.</p>
     @if (this.AddedToCart)
     {
-      <button mat-flat-button type="button" (click)="Click(this)" active="false" class="add-card">Убрать из корзины</button>
+      <button type="button" (click)="Click($event)" class="button-base">Убрать из корзины</button>
     } @else {
-      <button mat-flat-button type="button" (click)="Click(this)" active="true" class="add-card">Добавить в корзину</button>
+      <button type="button" (click)="Click($event)" class="button-base">Добавить в корзину</button>
     }
   </div>
 </div>

@@ -23,16 +23,16 @@
       @if (!InCart) {
         <div class="mt-2 mb-4">
           <button (click)="ReduceCnt($event)" class="btn-op">-</button>
-          <input readonly="true" (click)="AddToCart($event)" class="cnt-inp mx-2" value="{{SelectedCount}}">
+          <input readonly="true" class="cnt-inp mx-2" value="{{SelectedCount}}">
           <button (click)="AddCnt($event)" class="btn-op">+</button>
         </div>
 
         <div class="check-container">
-          <button class="col-md-4 btn-buy mx-2 fs-5" mat-flat-button>В корзину</button>
+          <button (click)="AddToCart($event)" class="col-md-4 button-base mx-2 fs-5">В корзину</button>
         </div>
       } @else {
         <div class="check-container">
-          <button class="col-md-4 btn-buy fs-5" mat-flat-button>Товар уже в корзине</button>
+          <button (click)="AddToCart($event)" class="col-md-4 button-base fs-5">Товар уже в корзине</button>
         </div>
       }
 

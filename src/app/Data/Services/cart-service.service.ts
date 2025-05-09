@@ -27,7 +27,7 @@ export class CartServiceService {
   }
 
   public DeleteFromCart(productId: number) {
-    this.products.delete(productId);
+    this.products.delete(Number(productId));
     this.SaveCart();
   }
 

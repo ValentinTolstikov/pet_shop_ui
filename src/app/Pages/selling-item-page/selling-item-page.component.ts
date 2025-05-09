@@ -1,15 +1,13 @@
 import {Component, Input, OnChanges, OnInit} from '@angular/core';
-import {ActivatedRoute, Router, RouterLink} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {CustomHeaderComponent} from '../../common-ui/custom-header/custom-header.component';
 import {FooterComponent} from '../../common-ui/footer/footer.component';
 import {NgbCarousel, NgbSlide} from '@ng-bootstrap/ng-bootstrap';
-import {MatButton, MatIconButton} from '@angular/material/button';
 import {ProductsServiceService} from '../../Data/Services/products-service.service';
 import {ProductsImageService} from '../../Data/Services/products-image.service';
 import {MatIcon} from '@angular/material/icon';
 import {SellingItemComponent} from '../../common-ui/selling-item/selling-item.component';
 import {selling_item} from '../../Data/Interfaces/selling-item.interface';
-import {elementAt, Observable} from 'rxjs';
 import {CartServiceService} from '../../Data/Services/cart-service.service';
 
 @Component({
@@ -19,7 +17,6 @@ import {CartServiceService} from '../../Data/Services/cart-service.service';
     FooterComponent,
     NgbCarousel,
     NgbSlide,
-    MatButton,
     MatIcon,
     SellingItemComponent
   ],

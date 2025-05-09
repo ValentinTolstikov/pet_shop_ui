@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
-import {ProductResponse} from '../Interfaces/ApiResponses/product-response';
-import {UserInfoResponse} from '../Interfaces/ApiResponses/user-info-response';
+import { HttpClient } from '@angular/common/http';
+import { UserInfoResponse } from '../Interfaces/ApiResponses/user-info-response';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +15,6 @@ export class UserServiceService {
 
   public getUserInfo()
   {
-    return this.http.get<UserInfoResponse>(this.dev_host+'Account/GetUserInfo');
+    return this.http.get<UserInfoResponse>(this.prod_host+'Account/GetUserInfo');
   }
 }

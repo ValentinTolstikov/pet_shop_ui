@@ -87,24 +87,8 @@ input{
   }
 }
 
-button{
-  padding: 8px;
-  margin-bottom: 6px;
-  border-radius: 18px;
-  background-color: var(--dark-color);
-  font-family: 'JetBrains Mono', serif;
-  font-weight: lighter;
-  border: 0;
-  color: var(--black-color);
-  font-size: 18pt;
-}
-
 h2{
   padding-bottom: 2px;
-}
-
-button:hover{
-  background-color: var(--light-blue-color);
 }
 
 .error{
