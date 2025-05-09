@@ -62,9 +62,7 @@ export class CardPageComponent implements OnDestroy {
           selItem.price = data.price;
         }).add(()=>{
           this.CalcTotal();
-          this.selling_items.forEach((value) => {
-            this.CntItems += value.count;
-          })
+          this.CalcCount();
         })
       });
     });
@@ -89,9 +87,15 @@ export class CardPageComponent implements OnDestroy {
 
       this.ProductsPrice += element.price * element.count;
 
-      this.CntItems-=delta;
-
+      this.CalcCount();
       this.CalcTotal();
     }
+  }
+
+  private CalcCount() {
+    this.CntItems = 0;
+    this.selling_items.forEach((value) => {
+      this.CntItems += value.count;
+    })
   }
 }
