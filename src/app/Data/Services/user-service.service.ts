@@ -16,6 +16,6 @@ export class UserServiceService {
 
   public getUserInfo()
   {
-    return this.http.get<UserInfoResponse>(this.prod_host+'Account/GetUserInfo');
+    return this.http.get<UserInfoResponse>(this.dev_host+'Account/GetUserInfo');
   }
 }

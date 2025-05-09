@@ -32,6 +32,7 @@ import {UserServiceService} from '../../Data/Services/user-service.service';
 export class ProfilePageComponent implements OnInit {
   Username: string = '';
   Email: string = '';
+  Photo: string = '';
 
   constructor(private authService: AuthService, private router: Router, private userService: UserServiceService) {
   }
@@ -40,6 +41,7 @@ export class ProfilePageComponent implements OnInit {
     this.userService.getUserInfo().subscribe(userInfo => {
       this.Username = userInfo.username;
       this.Email = userInfo.email;
+      this.Photo = userInfo.photo;
     });
   }
 
