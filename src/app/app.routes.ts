@@ -8,6 +8,7 @@ import {SellingItemPageComponent} from './Pages/selling-item-page/selling-item-p
 import {ErrorPageComponent} from './Pages/error-page/error-page.component';
 import {SearchPageComponent} from './Pages/search-page/search-page.component';
 import {CardPageComponent} from './Pages/card-page/card-page.component';
+import {ProfilePageComponent} from './Pages/profile-page/profile-page.component';
 
 export const routes: Routes = [
   { path: "login", component: LoginPageComponent, },
@@ -17,5 +18,6 @@ export const routes: Routes = [
   { path: "items/:id", component: SellingItemPageComponent, canActivate: [loginGuard] },
   { path: "search/:member", component: SearchPageComponent, canActivate: [loginGuard] },
   { path: "error", component: ErrorPageComponent },
+  { path: "profile", component: ProfilePageComponent },
   { path: "cart", component: CardPageComponent, canActivate: [loginGuard] },
 ];

@@ -1,0 +1,88 @@
+@media screen and (width >= 800px) {
+  .container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 1fr;
+    padding: 24px;
+    justify-content: center;
+    gap: 0px 24px;
+    grid-template-areas:
+    "A B";
+  }
+
+  .A {
+    grid-area: A;
+    height: fit-content;
+  }
+  .B {
+    grid-area: B;
+  }
+}
+
+div{
+  font-family: 'JetBrains Mono', ui-serif;
+}
+
+@media screen and (width < 800px) {
+  .container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    justify-content: center;
+    gap: 0px 12px;
+    grid-template-areas:
+    "A"
+    "B";
+  }
+
+  .A {
+    grid-area: A;
+    height: fit-content;
+  }
+  .B {
+    grid-area: B;
+  }
+}
+
+.info-container{
+  display: flex;
+  margin-bottom: 12px;
+}
+
+img{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.fio{
+  margin: 0;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.text-container{
+  margin-left: 6px;
+}
+
+.email{
+  margin: 0;
+}
+
+.logout-button{
+  border: none;
+  margin-top: 12px;
+  padding: 12px;
+  color: white;
+  border-radius: 12px;
+  background: var(--attention-color);
+}
+
+.logout-button:hover{
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
+mat-card {
+  padding: 12px;
+}

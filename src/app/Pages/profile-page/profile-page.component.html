@@ -1,1 +1,42 @@
-<p>profile-page works!</p>
+<app-custom-header/>
+
+<body>
+  <div class="container">
+    <div class="A">
+      <mat-card>
+        <div class="info-container">
+          <img src="/Assets/Imgs/forsmallpets.jpg">
+          <div class="text-container">
+            <p class="fio">{{Username}}</p>
+            <p class="email">{{Email}}</p>
+          </div>
+        </div>
+        <mat-divider/>
+        <a>Profile</a>
+        <a>Orders</a>
+        <a>Addresses</a>
+        <a>Settings</a>
+        <mat-divider/>
+        <button (click)="Logout($event)" class="logout-button">Выйти из аккаунта</button>
+      </mat-card>
+    </div>
+    <div class="B">
+      <mat-tab-group mat-stretch-tabs="true" mat-align-tabs="center">
+        <mat-tab label="Profile">
+          <app-user-profile/>
+        </mat-tab>
+        <mat-tab label="Orders">
+          <app-user-orders/>
+        </mat-tab>
+        <mat-tab label="Addresses">
+          <app-user-addresses/>
+        </mat-tab>
+        <mat-tab label="Settings">
+          <app-user-settings/>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</body>
+
+<app-footer/>
