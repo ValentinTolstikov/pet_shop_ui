@@ -1,7 +1,5 @@
 <div class="container">
-  <form
-    (ngSubmit)="onSubmit($event)"
-    [formGroup]="form"
+  <div [formGroup]="form"
     class="form-container">
     <h1 class="header">Регистрация</h1>
     <div class="fields-wrapper">
@@ -14,10 +12,10 @@
       <h2 class="default-top-margin lt-container label-text">Дата рождения</h2>
       <input class="text" type="date" formControlName="dateBorn">
     </div>
-    <button type="submit" class="default-top-margin button-base">Войти</button>
+    <button type="button" (click)="upload($event)" class="default-top-margin button-base">Войти</button>
     <h2 class="lt-container label-text">
       Есть аккаунт?
       <a (click)="goToLoginPage($event)" class="default-top-margin">Войти</a>
     </h2>
-  </form>
+  </div>
 </div>

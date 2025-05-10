@@ -32,12 +32,23 @@ export class RegistrationPageComponent {
 
   }
 
-  async onSubmit($event: any) {
+  async upload($event: any) {
     const fValue = this.form.value;
-    let response = await this.authService.Register(fValue.username, fValue.password, fValue.email, fValue.dateBorn);
-    if (response)
-    {
-      await this.router.navigate(['/']);
+    try{
+      let response = await this.authService.Register(fValue.username, fValue.password, fValue.email, fValue.dateBorn);
+
+      response.subscribe(async res => {
+        if(res){
+          await this.authService.Auth(fValue.username, fValue.password);
+          await this.router.navigate(['/']);
+        }
+        else {
+          await this.router.navigate(['/register']);
+        }
+      })
+    }
+    catch(error) {
+      console.log(error);
     }
   }
 }

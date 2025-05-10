@@ -11,13 +11,13 @@ import {CardPageComponent} from './Pages/card-page/card-page.component';
 import {ProfilePageComponent} from './Pages/profile-page/profile-page.component';
 
 export const routes: Routes = [
-  { path: "login", component: LoginPageComponent, },
-  { path: "register", component: RegistrationPageComponent},
+  { path: "login", component: LoginPageComponent },
+  { path: "register", component: RegistrationPageComponent },
   { path: "", component: MainPageComponent, canActivate: [loginGuard] },
   { path: "category/:name", component: CategoryPageComponent, canActivate: [loginGuard] },
   { path: "items/:id", component: SellingItemPageComponent, canActivate: [loginGuard] },
   { path: "search/:member", component: SearchPageComponent, canActivate: [loginGuard] },
-  { path: "error", component: ErrorPageComponent },
-  { path: "profile", component: ProfilePageComponent },
+  { path: "error", component: ErrorPageComponent, canActivate: [loginGuard] },
+  { path: "profile", component: ProfilePageComponent, canActivate: [loginGuard] },
   { path: "cart", component: CardPageComponent, canActivate: [loginGuard] },
 ];
