@@ -7,7 +7,7 @@ import {ProductResponse} from '../Interfaces/ApiResponses/product-response';
   providedIn: 'root'
 })
 export class ProductsServiceService {
-  private readonly prod_host: string = 'https://valentintolstikov-petshopapi-2ad0.twc1.net/';
+  private readonly prod_host: string = 'https://valentintolstikov-petshopapi-68c3.twc1.net';
   private readonly dev_host: string = 'http://localhost:8080/';
 
   constructor(private http: HttpClient) {

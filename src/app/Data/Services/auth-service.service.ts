@@ -7,7 +7,7 @@ import {catchError, firstValueFrom, map, of, Subscription} from 'rxjs';
 })
 
 export class AuthService {
-  private readonly prod_host: string = 'https://valentintolstikov-petshopapi-2ad0.twc1.net/';
+  private readonly prod_host: string = 'https://valentintolstikov-petshopapi-68c3.twc1.net/';
   private readonly dev_host: string = 'http://localhost:8080/';
 
   private token: string = "";

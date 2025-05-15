@@ -18,7 +18,6 @@ import {UserServiceService} from '../../Data/Services/user-service.service';
     MatTab,
     MatTabGroup,
     MatCard,
-    MatDivider,
     CustomHeaderComponent,
     FooterComponent,
     UserProfileComponent,

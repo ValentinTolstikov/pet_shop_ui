@@ -1,0 +1,50 @@
+.order-wrapper{
+  border: 1px solid rgba(80, 80, 80, 0.25);
+  border-radius: 12px;
+  padding: 12px;
+  margin: 12px 0px;
+}
+
+.order-header-container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-footer-container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status[state="ok"]{
+  padding: 12px;
+  border-radius: 18px;
+  border: 1px solid rgb(116, 255, 81);
+  background-color: rgb(116, 255, 81);
+}
+
+.status[state="error"]{
+  padding: 12px;
+  border-radius: 18px;
+  border: 1px solid rgb(228, 55, 55);
+  background-color: rgb(228, 55, 55);
+}
+
+.status[state="warning"]{
+  padding: 12px;
+  border-radius: 18px;
+  border: 1px solid rgb(250, 177, 74);
+  background-color: rgb(250, 177, 74);
+}

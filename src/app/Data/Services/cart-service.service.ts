@@ -1,6 +1,4 @@
-import {Injectable, OnInit} from '@angular/core';
-import {CartItem} from '../Interfaces/cart-item';
-import {Observable} from 'rxjs';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'

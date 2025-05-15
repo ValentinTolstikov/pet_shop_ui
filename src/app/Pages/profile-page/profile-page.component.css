@@ -42,6 +42,10 @@ div{
   .B {
     grid-area: B;
   }
+
+  body{
+    height: fit-content;
+  }
 }
 
 .info-container{

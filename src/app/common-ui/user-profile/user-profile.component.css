@@ -24,6 +24,7 @@ input{
   padding: 12px;
   border: none;
   border-radius: 12px;
+  box-sizing: border-box;
 }
 
 .divider{
@@ -32,6 +33,7 @@ input{
 }
 
 .container{
+
   padding: 12px;
   border-radius: 12px;
   border: 1px solid rgba(200, 200, 200, 0.34);

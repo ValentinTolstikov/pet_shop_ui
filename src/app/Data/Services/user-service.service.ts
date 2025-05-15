@@ -6,7 +6,7 @@ import { UserInfoResponse } from '../Interfaces/ApiResponses/user-info-response'
   providedIn: 'root'
 })
 export class UserServiceService {
-  private readonly prod_host: string = 'https://valentintolstikov-petshopapi-2ad0.twc1.net/';
+  private readonly prod_host: string = 'https://valentintolstikov-petshopapi-68c3.twc1.net/';
   private readonly dev_host: string = 'http://localhost:8080/';
 
   constructor(private http: HttpClient) {

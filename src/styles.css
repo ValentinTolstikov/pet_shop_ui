@@ -1,24 +1,33 @@
 @import "app/fonts.css";
 
-:root{
+:root [Theme="dark"]{
+  --dark-color: #09314a;
+
+  --bg-color: #3c3c3c;
+
+  --white-color: #989898;
+  --black-color: #000000;
+
+  --border-default-color: rgba(80, 80, 80, 0.25);
+  --dark-input-color: rgba(0, 0, 0, 0.05);
+  --attention-color: rgb(164, 60, 60);
+}
+
+:root [Theme="light"]{
   --dark-color: #22577A;
-  --light-color: #C7F9CC;
-  --light-blue-color: #38A3A5;
-  --light-green-color: #80ED99;
-  --normal-color: #57CC99;
 
   --bg-color: #f1f1f1;
 
   --white-color: #fff;
   --black-color: #000000;
 
-  --border-default-color: rgba(128, 128, 128, 0.25);
-  --border-hover-color: rgba(70, 70, 70, 0.25);
+  --border-default-color: rgba(80, 80, 80, 0.25);
   --dark-input-color: rgba(0, 0, 0, 0.05);
-  --text-light-color: rgb(221, 221, 221);
-  --link-default-color: rgb(162, 202, 255);
   --attention-color: rgb(164, 60, 60);
-  --border-selection-color: rgb(182, 44, 44);
+}
+
+mat-divider{
+  border-top-color: var(--border-default-color) !important;
 }
 
 html, body {
