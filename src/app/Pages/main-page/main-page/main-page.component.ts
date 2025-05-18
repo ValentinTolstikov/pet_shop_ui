@@ -6,8 +6,8 @@ import {selling_item} from '../../../Data/Interfaces/selling-item.interface';
 import {faCartShopping, faCat, faCircleUser, faCrow, faFishFins, faPaw} from '@fortawesome/free-solid-svg-icons';
 import {CustomHeaderComponent} from '../../../common-ui/custom-header/custom-header.component';
 import {FooterComponent} from '../../../common-ui/footer/footer.component';
-import {ProductsServiceService} from '../../../Data/Services/products-service.service';
 import {NgOptimizedImage} from '@angular/common';
+import {RecomendationsServiceService} from '../../../Data/Services/recomendations-service.service';
 
 @Component({
   selector: 'app-main-page',
@@ -41,12 +41,12 @@ export class MainPageComponent {
   public TopSellingItems: selling_item[] = [
   ];
 
-  constructor(private productService: ProductsServiceService) {
+  constructor(private recomendationsService: RecomendationsServiceService) {
     this.LoadProducts();
   }
 
   private async LoadProducts(): Promise<void> {
-    let prods = await this.productService.getAllProducts(null);
+    let prods = this.recomendationsService.getReco(4);
     prods.subscribe(products => {
       products.forEach(product => {
         let newProd: selling_item = {id:product.id, name:product.title, image:"/Assets/Imgs/forcats.jpg", price: product.price, description:product.description};

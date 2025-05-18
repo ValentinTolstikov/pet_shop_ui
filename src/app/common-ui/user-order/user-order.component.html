@@ -8,22 +8,25 @@
       Доставлен
     </p>
     <div>
-      <h2>800 р.</h2>
-      <p>2 товара</p>
+      <h2>{{SumPrice}} р.</h2>
+      <p>{{TotalCnt}} товара</p>
     </div>
   </div>
   <mat-divider/>
 
-  <div class="product-container">
-    <h4>Мячик для собаки</h4>
-    <p>2 шт.</p>
-    <p>Всего: 400 р.</p>
-  </div>
+  @for (item of order?.products; track order?.idOrder)
+  {
+    <div class="product-container">
+      <h4>{{item.item1.title}}</h4>
+      <p>{{item.item2}} шт.</p>
+      <p>Всего: {{item.item2*item.item1.price}} р.</p>
+    </div>
+  }
 
   <mat-divider/>
 
   <div class="order-footer-container">
-    <h4>Суммарная стоимость: 800р.</h4>
+    <h4>Суммарная стоимость: {{SumPrice}}р.</h4>
     <p>Получен 22.01.2025, 17:55</p>
   </div>
 </div>

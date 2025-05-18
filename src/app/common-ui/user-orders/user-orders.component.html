@@ -4,7 +4,7 @@
   <div class="orders-container">
     @for (item of orders; track item.idOrder)
     {
-      <app-user-order/>
+      <app-user-order [order]="item"/>
     }
   </div>
 </div>
