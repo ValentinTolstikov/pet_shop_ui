@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ServiceBaseService {
-  private readonly prod_host: string = 'http://31.130.144.79:8080/';
+  private readonly prod_host: string = 'https://valentintolstikov-petshopapi-c1d9.twc1.net/';
   private readonly dev_host: string = 'http://localhost:8080/';
 
   constructor() { }
