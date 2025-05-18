@@ -11,6 +11,6 @@ export class ServiceBaseService {
 
   public getConnectionString()
   {
-    return this.dev_host;
+    return this.prod_host;
   }
 }
