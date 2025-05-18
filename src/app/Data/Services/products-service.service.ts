@@ -2,16 +2,15 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {ProductResponse} from '../Interfaces/ApiResponses/product-response';
+import {ServiceBaseService} from './service-base.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductsServiceService {
-  private readonly prod_host: string = 'https://valentintolstikov-petshopapi-68c3.twc1.net/';
-  private readonly dev_host: string = 'http://localhost:8080/';
+export class ProductsServiceService extends ServiceBaseService{
 
   constructor(private http: HttpClient) {
-
+    super();
   }
 
   public async getAllProducts(filter: string | null = null): Promise<Observable<ProductResponse[]>> {
@@ -21,11 +20,11 @@ export class ProductsServiceService {
       params = params.set("category", filter);
     }
 
-    return this.http.get<ProductResponse[]>(this.prod_host+'Product/GetPage', {params: params});
+    return this.http.get<ProductResponse[]>(this.getConnectionString()+'Product/GetPage', {params: params});
   }
 
   public async getProductById(id: number): Promise<Observable<ProductResponse>> {
     let params = new HttpParams().set("page", 1).set("id", id);
-    return this.http.get<ProductResponse>(this.prod_host+'Product/Get', {params: params});
+    return this.http.get<ProductResponse>(this.getConnectionString()+'Product/Get', {params: params});
   }
 }

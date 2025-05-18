@@ -1,23 +1,23 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpResponse} from '@angular/common/http';
 import {catchError, firstValueFrom, map, of, Subscription} from 'rxjs';
+import {ServiceBaseService} from './service-base.service';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class AuthService {
-  private readonly prod_host: string = 'https://valentintolstikov-petshopapi-68c3.twc1.net/';
-  private readonly dev_host: string = 'http://localhost:8080/';
-
+export class AuthService extends ServiceBaseService {
   private token: string = "";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    super();
+  }
 
   public async Auth(Username: string, Password: string): Promise<boolean> {
     let result: boolean = false;
 
-    const task = this.http.post<string>(this.prod_host+'Login', {Username: Username, Password: Password});
+    const task = this.http.post<string>(this.getConnectionString()+'Login', {Username: Username, Password: Password});
     const value = await firstValueFrom(task).catch((error) => { result = false; });
 
     if(value){
@@ -32,7 +32,7 @@ export class AuthService {
     let result: boolean = false;
     let done = false;
 
-    const task = this.http.post<HttpResponse<any>>(this.prod_host+'Registration', {Username: Username, Password: Password, Email: Email, DateOfBirth: DateBorn});
+    const task = this.http.post<HttpResponse<any>>(this.getConnectionString()+'Registration', {Username: Username, Password: Password, Email: Email, DateOfBirth: DateBorn});
     let test = task.pipe(
       map(response => {
         return response === null;

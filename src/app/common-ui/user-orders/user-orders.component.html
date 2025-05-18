@@ -2,9 +2,9 @@
   <h2>Заказы</h2>
   <p>В этом месте вы можете увидеть ваши заказы.</p>
   <div class="orders-container">
-    <app-user-order/>
-    <app-user-order/>
-    <app-user-order/>
-    <app-user-order/>
+    @for (item of orders; track item.idOrder)
+    {
+      <app-user-order/>
+    }
   </div>
 </div>

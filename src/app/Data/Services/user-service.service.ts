@@ -1,20 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserInfoResponse } from '../Interfaces/ApiResponses/user-info-response';
+import {ServiceBaseService} from './service-base.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserServiceService {
-  private readonly prod_host: string = 'https://valentintolstikov-petshopapi-68c3.twc1.net/';
-  private readonly dev_host: string = 'http://localhost:8080/';
+export class UserServiceService extends ServiceBaseService {
 
   constructor(private http: HttpClient) {
-
+    super();
   }
 
   public getUserInfo()
   {
-    return this.http.get<UserInfoResponse>(this.prod_host+'Account/GetUserInfo');
+    return this.http.get<UserInfoResponse>(this.getConnectionString()+'Account/GetUserInfo');
   }
 }
