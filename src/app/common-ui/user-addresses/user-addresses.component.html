@@ -1,1 +1,6 @@
-<p>user-addresses works!</p>
+<div class="container">
+  @for (adress of adresses; track adress.Id)
+  {
+    <app-user-address [Adress]="adress" [isSelected]="false"/>
+  }
+</div>

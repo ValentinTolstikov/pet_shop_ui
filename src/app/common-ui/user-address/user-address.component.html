@@ -1,1 +1,16 @@
-<p>user-address works!</p>
+@if (isSelected)
+{
+  <div active="true" class="address-container">
+    <p>{{Adress?.city}}</p>
+    <p>{{Adress?.streat}}</p>
+    <p>{{Adress?.houseAdditional}}</p>
+    <p>{{Adress?.house}}</p>
+  </div>
+} @else {
+  <div active="false" class="address-container">
+    <p>{{Adress?.city}}</p>
+    <p>{{Adress?.streat}}</p>
+    <p>{{Adress?.houseAdditional}}</p>
+    <p>{{Adress?.house}}</p>
+  </div>
+}

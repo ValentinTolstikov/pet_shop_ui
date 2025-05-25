@@ -2,11 +2,11 @@
   <h2>Персональная информация</h2>
   <p>В этом месте вы можете изменить свою персональную информацию.</p>
   <div class="info-container">
-    <img src="/Assets/Imgs/forcats.jpg">
+    <img src="{{userInfo?.photo}}">
     <div class="basic-info">
-      <p>Ivanov Ivan</p>
-      <p>ivanov.ivan.ru</p>
-      <button class="button-base">Загрузить фото</button>
+      <p>{{userInfo?.username}}</p>
+      <p>{{userInfo?.email}}</p>
+      <button (click)="LoadPhoto($event)" class="button-base">Загрузить фото</button>
     </div>
   </div>
   <mat-divider class="divider"/>

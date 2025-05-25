@@ -83,6 +83,12 @@ div{
   font-size: 18pt;
 }
 
+.buttons{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
 .container-summary{
   padding: 12px;
 }

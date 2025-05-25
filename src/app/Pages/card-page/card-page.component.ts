@@ -7,7 +7,13 @@ import {MatDivider} from '@angular/material/divider';
 import {CartItem} from '../../Data/Interfaces/cart-item';
 import {CartServiceService} from '../../Data/Services/cart-service.service';
 import {ProductsServiceService} from '../../Data/Services/products-service.service';
-import {Observable} from 'rxjs';
+import {ImageTogleButtonComponent} from '../../common-ui/image-togle-button/image-togle-button.component';
+import {faCartPlus, faCartShopping, faCreditCard, faMoneyBill} from '@fortawesome/free-solid-svg-icons';
+import {UserAddressComponent} from '../../common-ui/user-address/user-address.component';
+import {UserAdressesResponse} from '../../Data/Interfaces/ApiResponses/userAdressesResponse';
+import {UserServiceService} from '../../Data/Services/user-service.service';
+import {OrdersServiceService} from '../../Data/Services/orders-service.service';
+import {OrderProduct} from '../../Data/Interfaces/OrderProduct';
 
 @Component({
   selector: 'app-card-page',
@@ -16,7 +22,9 @@ import {Observable} from 'rxjs';
     FooterComponent,
     MatCard,
     ProductCartItemComponent,
-    MatDivider
+    MatDivider,
+    ImageTogleButtonComponent,
+    UserAddressComponent
   ],
   templateUrl: './card-page.component.html',
   styleUrl: './card-page.component.css'
@@ -28,8 +36,11 @@ export class CardPageComponent implements OnDestroy {
   ProductsPrice: number = 0;
   TotalPrice: number = 0;
 
-  constructor(private cartService: CartServiceService, private productService: ProductsServiceService) {
+  constructor(private cartService: CartServiceService, private userServ: UserServiceService, private ordersService: OrdersServiceService, private productService: ProductsServiceService) {
     this.loadData();
+    this.userServ.getUserAdresses().subscribe(res => {
+      this.adresses = res;
+    })
   }
 
   ngOnDestroy() {
@@ -97,5 +108,33 @@ export class CardPageComponent implements OnDestroy {
     this.selling_items.forEach((value) => {
       this.CntItems += value.count;
     })
+  }
+
+  protected readonly faCartShopping = faCartShopping;
+  protected readonly faCartPlus = faCartPlus;
+  protected readonly faCreditCard = faCreditCard;
+  protected readonly faMoneyBill = faMoneyBill;
+
+  isCard = false;
+
+  ChangePayMethod($event: MouseEvent) {
+    this.isCard = !this.isCard;
+  }
+
+  selectedIndex = 1;
+  adresses: UserAdressesResponse[] = [];
+
+  ChangeAddress($event: MouseEvent, index: number) {
+    this.selectedIndex = index;
+  }
+
+  sale($event: MouseEvent) {
+    let products: OrderProduct[] = [];
+
+    this.selling_items.forEach((value, key) => {
+      products.push({productId:(value.id as number),count:value.count as number})
+    })
+
+    this.ordersService.createOrder(products);
   }
 }

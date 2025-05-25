@@ -1,0 +1,25 @@
+.address-container[active="true"]{
+  margin: 12px;
+  display: flex;
+  background: var(--dark-color);
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid var(--border-default-color);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.address-container:hover{
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.address-container[active="false"]{
+  margin: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid var(--border-default-color);
+  border-radius: 12px;
+  padding: 12px;
+}

@@ -1,0 +1,10 @@
+@if (isActive)
+{
+  <div class="button-container" active="true">
+    <fa-icon size="2xl" [inverse]="isActive" [icon]="img"/>
+  </div>
+} @else {
+  <div class="button-container" active="false">
+    <fa-icon size="2xl" [inverse]="isActive" [icon]="img"/>
+  </div>
+}

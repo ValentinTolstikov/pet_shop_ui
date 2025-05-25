@@ -16,8 +16,26 @@
           <p>Подытог. (Колличество позиций - {{CntItems}}): {{ProductsPrice}} p.</p>
           <p>Комиссия сервиса: 50 p.</p>
           <mat-divider/>
+
+          <div class="buttons">
+            <app-image-togle-button (click)="ChangePayMethod($event)" [isActive]="isCard" [img]="faCreditCard"/>
+            <app-image-togle-button (click)="ChangePayMethod($event)" [isActive]="!isCard" [img]="faMoneyBill"/>
+          </div>
+
+          <mat-divider/>
+
+          @for (item of adresses; track item.Id)
+          {
+            @if(selectedIndex == item.Id)
+            {
+              <app-user-address [Adress]="item" [isSelected]="true" (click)="ChangeAddress($event, item.Id)"/>
+            } @else {
+              <app-user-address [Adress]="item" [isSelected]="false" (click)="ChangeAddress($event, item.Id)"/>
+            }
+          }
+
           <h3>Итог: {{TotalPrice}} p.</h3>
-          <button class="btn-billing">Перейти к оформлению</button>
+          <button (click)="sale($event)" class="btn-billing">Перейти к оформлению</button>
         </mat-card>
       </div>
     </mat-card>
