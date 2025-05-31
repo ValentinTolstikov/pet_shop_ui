@@ -1,16 +1,19 @@
-@if (isSelected)
-{
-  <div active="true" class="address-container">
+<div active="false" class="address-container">
+  <div>
+    <p>Город:</p>
     <p>{{Adress?.city}}</p>
+  </div>
+
+  <div>
+    <p>Улица:</p>
     <p>{{Adress?.streat}}</p>
+  </div>
+  <div>
+    <p>Доп-я информация:</p>
     <p>{{Adress?.houseAdditional}}</p>
+  </div>
+  <div>
+    <p>Дом:</p>
     <p>{{Adress?.house}}</p>
   </div>
-} @else {
-  <div active="false" class="address-container">
-    <p>{{Adress?.city}}</p>
-    <p>{{Adress?.streat}}</p>
-    <p>{{Adress?.houseAdditional}}</p>
-    <p>{{Adress?.house}}</p>
-  </div>
-}
+</div>

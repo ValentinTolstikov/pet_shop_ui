@@ -1,6 +1,7 @@
 .address-container[active="true"]{
   margin: 12px;
   display: flex;
+  flex-wrap: wrap;
   background: var(--dark-color);
   flex-direction: row;
   justify-content: space-around;

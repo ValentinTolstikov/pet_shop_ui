@@ -1,22 +1,22 @@
 import { Component } from '@angular/core';
-import {UserAddressComponent} from "../user-address/user-address.component";
-import {UserAdressesResponse} from '../../Data/Interfaces/ApiResponses/userAdressesResponse';
+import {UserAddressResponse} from '../../Data/Interfaces/ApiResponses/userAddressResponse';
 import {UserServiceService} from '../../Data/Services/user-service.service';
+import {MatDivider} from '@angular/material/divider';
 
 @Component({
   selector: 'app-user-addresses',
   imports: [
-    UserAddressComponent
+    MatDivider
   ],
   templateUrl: './user-addresses.component.html',
   styleUrl: './user-addresses.component.css'
 })
 export class UserAddressesComponent {
-  adresses: UserAdressesResponse[] = [];
+  address: UserAddressResponse|null = null;
 
   constructor(private userService: UserServiceService) {
-    userService.getUserAdresses().subscribe(adresses => {
-      this.adresses = adresses;
+    userService.getUserAddress().subscribe(address => {
+      this.address = address;
     })
   }
 }

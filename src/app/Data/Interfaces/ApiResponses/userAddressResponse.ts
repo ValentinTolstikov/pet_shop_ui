@@ -1,4 +1,4 @@
-export interface UserAdressesResponse{
+export interface UserAddressResponse {
   Id: number
   IdUser: number
   city: string

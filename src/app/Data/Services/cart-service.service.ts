@@ -37,8 +37,6 @@ export class CartServiceService {
     localStorage.setItem("cartItems",JSON.stringify(Array.from(this.products)));
   }
 
-  //TODO Нужно добавить в API метод для работы с корзиной.
-  //TODO Также нужно сохранять в локал сторе для скорости.
   public TryLoadFromLocalStorage() {
     let jsonData = localStorage.getItem("cartItems");
 

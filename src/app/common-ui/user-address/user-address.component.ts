@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {UserAdressesResponse} from '../../Data/Interfaces/ApiResponses/userAdressesResponse';
+import {UserAddressResponse} from '../../Data/Interfaces/ApiResponses/userAddressResponse';
 
 @Component({
   selector: 'app-user-address',
@@ -10,5 +10,5 @@ import {UserAdressesResponse} from '../../Data/Interfaces/ApiResponses/userAdres
 })
 export class UserAddressComponent {
   @Input()isSelected: boolean = false;
-  @Input()Adress: UserAdressesResponse|null = null;
+  @Input()Adress: UserAddressResponse|null = null;
 }

@@ -1,5 +1,7 @@
 <app-custom-header></app-custom-header>
 
+<app-loader [loading]="!IsLoaded"></app-loader>
+
 @if (selling_items.length>0) {
   <div class="pg-cnt">
     <mat-card class="container">
@@ -24,15 +26,7 @@
 
           <mat-divider/>
 
-          @for (item of adresses; track item.Id)
-          {
-            @if(selectedIndex == item.Id)
-            {
-              <app-user-address [Adress]="item" [isSelected]="true" (click)="ChangeAddress($event, item.Id)"/>
-            } @else {
-              <app-user-address [Adress]="item" [isSelected]="false" (click)="ChangeAddress($event, item.Id)"/>
-            }
-          }
+          <app-user-address [Adress]="address" [isSelected]="false" (click)="ChangeAddress($event, address!.Id)"/>
 
           <h3>Итог: {{TotalPrice}} p.</h3>
           <button (click)="sale($event)" class="btn-billing">Перейти к оформлению</button>

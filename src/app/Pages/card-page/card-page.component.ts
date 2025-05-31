@@ -10,10 +10,11 @@ import {ProductsServiceService} from '../../Data/Services/products-service.servi
 import {ImageTogleButtonComponent} from '../../common-ui/image-togle-button/image-togle-button.component';
 import {faCartPlus, faCartShopping, faCreditCard, faMoneyBill} from '@fortawesome/free-solid-svg-icons';
 import {UserAddressComponent} from '../../common-ui/user-address/user-address.component';
-import {UserAdressesResponse} from '../../Data/Interfaces/ApiResponses/userAdressesResponse';
+import {UserAddressResponse} from '../../Data/Interfaces/ApiResponses/userAddressResponse';
 import {UserServiceService} from '../../Data/Services/user-service.service';
 import {OrdersServiceService} from '../../Data/Services/orders-service.service';
 import {OrderProduct} from '../../Data/Interfaces/OrderProduct';
+import {LoaderComponent} from '../../common-ui/loader/loader.component';
 
 @Component({
   selector: 'app-card-page',
@@ -24,7 +25,8 @@ import {OrderProduct} from '../../Data/Interfaces/OrderProduct';
     ProductCartItemComponent,
     MatDivider,
     ImageTogleButtonComponent,
-    UserAddressComponent
+    UserAddressComponent,
+    LoaderComponent
   ],
   templateUrl: './card-page.component.html',
   styleUrl: './card-page.component.css'
@@ -36,11 +38,15 @@ export class CardPageComponent implements OnDestroy {
   ProductsPrice: number = 0;
   TotalPrice: number = 0;
 
+  IsLoaded: boolean = false;
+
   constructor(private cartService: CartServiceService, private userServ: UserServiceService, private ordersService: OrdersServiceService, private productService: ProductsServiceService) {
+    this.IsLoaded = false;
     this.loadData();
-    this.userServ.getUserAdresses().subscribe(res => {
-      this.adresses = res;
+    this.userServ.getUserAddress().subscribe(res => {
+      this.address = res;
     })
+    this.IsLoaded = true;
   }
 
   ngOnDestroy() {
@@ -122,19 +128,26 @@ export class CardPageComponent implements OnDestroy {
   }
 
   selectedIndex = 1;
-  adresses: UserAdressesResponse[] = [];
+  address: UserAddressResponse|null = null;
 
   ChangeAddress($event: MouseEvent, index: number) {
     this.selectedIndex = index;
   }
 
   sale($event: MouseEvent) {
+    this.IsLoaded = false;
+
     let products: OrderProduct[] = [];
 
     this.selling_items.forEach((value, key) => {
       products.push({productId:(value.id as number),count:value.count as number})
     })
 
-    this.ordersService.createOrder(products);
+    this.ordersService.createOrder(products).then(r => {
+      this.cartService.ClearCart();
+      this.loadData().then(r => {
+        this.IsLoaded = true;
+      });
+    });
   }
 }
