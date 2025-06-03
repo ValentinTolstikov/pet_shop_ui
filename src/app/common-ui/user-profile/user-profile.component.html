@@ -6,14 +6,11 @@
     <div class="basic-info">
       <p>{{userInfo?.username}}</p>
       <p>{{userInfo?.email}}</p>
+      <input class="button-base" type="file">
+      <mat-divider class="divider"/>
       <button (click)="LoadPhoto($event)" class="button-base">Загрузить фото</button>
     </div>
   </div>
-  <mat-divider class="divider"/>
-  <h4>Имя пользователя</h4>
-  <input>
-  <h4>Почта</h4>
-  <input>
   <mat-divider class="divider"/>
   <button class="button-base">Сохранить</button>
 </div>

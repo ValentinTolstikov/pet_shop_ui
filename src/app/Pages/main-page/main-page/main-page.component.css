@@ -14,32 +14,14 @@ a{
 }
 
 .hero img {
-  width: 100%;
-  inline-size: -webkit-fill-available;
+  aspect-ratio: 2;
+  inline-size: auto;
   border-top: 1px solid rgb(239, 239, 239);
   border-left: 1px solid rgb(239, 239, 239);
   border-right: 3px solid rgba(128, 128, 128, 0.25);
   border-bottom: 3px solid rgba(128, 128, 128, 0.25);
   margin: 30px;
   border-radius: 24px;
-}
-
-.head{
-  font-size: xxx-large;
-  margin: 6px;
-}
-
-.desc{
-  font-size: x-large;
-  margin: 6px;
-}
-
-.welcome-text {
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
 }
 
 .shop-by-pet, .top-selling-items, .pet-care-tips {
@@ -64,6 +46,24 @@ a{
     border-radius: 32px;
   }
 
+  .welcome-text {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+
+  .head{
+    font-size: xxx-large;
+    margin: 6px;
+  }
+
+  .desc{
+    font-size: x-large;
+    margin: 6px;
+  }
+
   .items{
     display: grid;
     row-gap: 8px;
@@ -75,14 +75,14 @@ a{
     margin-left: 96px;
     margin-right: 96px;
   }
-}
 
-h2 {
-  text-align: center;
-  margin: 12px 0;
-  font-size: xxx-large;
-  font-weight: 500;
-  font-family: 'JetBrains Mono', ui-serif;
+  h2 {
+    text-align: center;
+    margin: 12px 0;
+    font-size: xxx-large;
+    font-weight: 500;
+    font-family: 'JetBrains Mono', ui-serif;
+  }
 }
 
 @media screen and (width < 600px) {
@@ -91,6 +91,33 @@ h2 {
     justify-content: normal;
     background: rgb(255,255,255);
     border-radius: 24px;
+  }
+
+  h2 {
+    text-align: center;
+    margin: 12px 0;
+    font-size: large;
+    font-weight: 500;
+    font-family: 'JetBrains Mono', ui-serif;
+  }
+
+  .welcome-text {
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+
+  .head{
+    font-size: large;
+    margin: 6px;
+  }
+
+  .desc{
+    font-size: medium;
+    margin: 6px;
   }
 
   .items{
@@ -113,6 +140,32 @@ h2 {
     grid-template-columns: 1fr 1fr;
     background: rgb(255,255,255);
     border-radius: 32px;
+  }
+
+  h2 {
+    text-align: center;
+    margin: 12px 0;
+    font-size: xx-large;
+    font-weight: 500;
+    font-family: 'JetBrains Mono', ui-serif;
+  }
+
+  .welcome-text {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+
+  .head{
+    font-size: xx-large;
+    margin: 6px;
+  }
+
+  .desc{
+    font-size: large;
+    margin: 6px;
   }
 
   .items{

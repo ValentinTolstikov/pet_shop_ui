@@ -42,11 +42,12 @@ export class CardPageComponent implements OnDestroy {
 
   constructor(private cartService: CartServiceService, private userServ: UserServiceService, private ordersService: OrdersServiceService, private productService: ProductsServiceService) {
     this.IsLoaded = false;
-    this.loadData();
+    this.loadData().then(r => {
+      this.IsLoaded = true;
+    });
     this.userServ.getUserAddress().subscribe(res => {
       this.address = res;
     })
-    this.IsLoaded = true;
   }
 
   ngOnDestroy() {
