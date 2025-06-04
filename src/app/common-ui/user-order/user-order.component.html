@@ -1,12 +1,19 @@
 <div class="order-wrapper">
   <div class="order-header-container">
     <div>
-      <h2>Заказ ORD-0232</h2>
-      <p>Оформлен 21.01.2025</p>
+      <h2>Заказ {{order?.idOrder}}</h2>
+      <p>Оформлен {{order?.orderDate}}</p>
     </div>
-    <p class="status" state="ok">
-      Доставлен
-    </p>
+    @if (order?.isDelivered)
+    {
+      <p class="status" state="ok">
+        Доставлен
+      </p>
+    } @else {
+      <p class="status" state="warning">
+        В работе
+      </p>
+    }
     <div>
       <h2>{{SumPrice}} р.</h2>
       <p>{{TotalCnt}} товара</p>
@@ -27,6 +34,8 @@
 
   <div class="order-footer-container">
     <h4>Суммарная стоимость: {{SumPrice}}р.</h4>
-    <p>Получен 22.01.2025, 17:55</p>
+    @if (order?.isDelivered) {
+      <p>Получен {{order?.deliverDate}}</p>
+    }
   </div>
 </div>

@@ -15,7 +15,7 @@ a{
 
 .hero img {
   aspect-ratio: 2;
-  inline-size: auto;
+  inline-size: -webkit-fill-available;
   border-top: 1px solid rgb(239, 239, 239);
   border-left: 1px solid rgb(239, 239, 239);
   border-right: 3px solid rgba(128, 128, 128, 0.25);
