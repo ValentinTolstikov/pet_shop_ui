@@ -7,6 +7,15 @@
       <button (click)="Search(searchInput.value)" class="button-base">Поиск</button>
     </div>
   </div>
+
+    @if (products.length==0)
+    {
+      <div class="error-wrapper">
+        <img src="/Assets/Imgs/not_found_cat.svg">
+        <p>По вашему запросу ничего не найдено.</p>
+      </div>
+    }
+
   <div class="container">
     @for (item of products; track item.id) {
       <app-selling-item [Id]="item.id" [Name]="item.title" [Price]="item.price" [Description]="item.description" class="item"/>

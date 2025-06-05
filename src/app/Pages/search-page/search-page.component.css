@@ -37,6 +37,14 @@
   justify-content: center;
 }
 
+.error-wrapper{
+  text-align: center;
+  margin: auto;
+  font-size: x-large;
+  width: 30%;
+  height: 30%;
+}
+
 @media screen and (width < 900px) {
   .item {
     width: calc(50% - 10px);  /* Пример: каждый элемент 25% ширины с отступами */   /* Пример: высота элемента */
