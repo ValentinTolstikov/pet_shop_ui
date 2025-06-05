@@ -1,1 +1,18 @@
-<p>search-page works!</p>
+<app-custom-header/>
+
+<body class="base-container">
+  <div class="search-container">
+    <div class="search">
+      <input class="search-input" value="{{member}}" placeholder="Введите запрос..." #searchInput>
+      <button (click)="Search(searchInput.value)" class="button-base">Поиск</button>
+    </div>
+  </div>
+  <div class="container">
+    @for (item of products; track item.id) {
+      <app-selling-item [Id]="item.id" [Name]="item.title" [Price]="item.price" [Description]="item.description" class="item"/>
+    }
+
+  </div>
+</body>
+
+<app-footer/>

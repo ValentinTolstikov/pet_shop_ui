@@ -37,4 +37,8 @@ export class CustomHeaderComponent {
   GoToProfile($event: MouseEvent) {
     this.router.navigateByUrl('/profile');
   }
+
+  Search(route: string) {
+    this.router.navigateByUrl('/search/'+route);
+  }
 }

@@ -27,4 +27,9 @@ export class ProductsServiceService extends ServiceBaseService{
     let params = new HttpParams().set("page", 1).set("id", id);
     return this.http.get<ProductResponse>(this.getConnectionString()+'Product/Get', {params: params});
   }
+
+  public async search(request: string): Promise<Observable<ProductResponse[]>> {
+    let params = new HttpParams().set("request", request);
+    return this.http.get<ProductResponse[]>(this.getConnectionString()+'Product/Search', {params: params});
+  }
 }

@@ -23,7 +23,8 @@
       </li>
     </ul>
     <div class="search-cart-profile">
-      <input class="search" type="text" placeholder="Search...">
+      <input class="search" name="searchText" type="text" placeholder="Search..." #searchInput>
+      <button (click)="Search(searchInput.value)" class="button-base border">Поиск</button>
       <fa-icon size="2xl" (click)="GoToCart($event)" [icon]="faCartShopping">
       </fa-icon>
       <fa-icon size="2xl" (click)="GoToProfile($event)" [icon]="faCircleUser"/>

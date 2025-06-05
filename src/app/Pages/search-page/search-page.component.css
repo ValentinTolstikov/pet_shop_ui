@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;  /* Если элементы нужно переносить */
+  justify-content: space-between; /* Опционально: равномерное распределение */
+  align-items: stretch;          /* Опционально: выравнивание по вертикали */
+}
+
+.base-container{
+  height: fit-content;
+}
+
+.search{
+  margin: 32px 0px;
+  width: 70%;
+  column-gap: 16px;
+  display: flex;
+  flex-direction: row;
+}
+
+.search-input{
+  width: 100%;
+
+  font-size: larger;
+  border: none;
+  border-radius: 18px;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+
+.search-input:hover{
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.search-container{
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (width < 900px) {
+  .item {
+    width: calc(50% - 10px);  /* Пример: каждый элемент 25% ширины с отступами */   /* Пример: высота элемента */
+    background-color: #f0f0f0; /* Пример: цвет фона */
+    margin-bottom: 10px;       /* Пример: отступ снизу */
+  }
+}
+
+@media screen and (width >= 900px) {
+  .item {
+    width: calc(25% - 10px);  /* Пример: каждый элемент 25% ширины с отступами */   /* Пример: высота элемента */
+    background-color: #f0f0f0; /* Пример: цвет фона */
+    margin-bottom: 10px;       /* Пример: отступ снизу */
+  }
+}

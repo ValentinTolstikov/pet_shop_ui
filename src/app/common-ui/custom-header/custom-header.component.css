@@ -77,7 +77,9 @@ fa-icon:hover {
   }
 }
 
-
+.border{
+  border: 1px solid var(--dark-color);
+}
 
 header nav ul li {
   margin-right: 16px;
