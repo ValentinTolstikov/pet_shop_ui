@@ -16,3 +16,16 @@ export const loginGuard = (route: ActivatedRouteSnapshot, state: RouterStateSnap
 
   return result;
 };
+
+export const adminGuard = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
+  const authService = inject(AuthService);
+  const router = inject(Router);
+
+  const result = authService.isAdmin();
+
+  if(!result){
+    router.navigate(['/login']);
+  }
+
+  return result;
+};

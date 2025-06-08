@@ -1,0 +1,28 @@
+<h4>Управление пользователями</h4>
+<p>Поиск по имени</p>
+<input value="{{SearchText}}" (input)="SortUsers($event)">
+<table class="table">
+  <thead>
+  <tr>
+    <th>Имя пользователя</th>
+    <th>Адрес эл. почты</th>
+    <th>Роль</th>
+    <th>Статус</th>
+    <th>Действия</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>Victor victorov</td>
+    <td>victor&#64;victor.ru</td>
+    <td>User</td>
+    <td>Active</td>
+    <td>
+      <div class="flex-container">
+        <p class="m-0">Активен</p>
+        <mat-checkbox/>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>

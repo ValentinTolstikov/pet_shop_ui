@@ -1,0 +1,18 @@
+<header>
+  <h2 class="header-text">Панель управления</h2>
+</header>
+
+<body>
+  <h3>Добро пожаловать, Test</h3>
+  <mat-tab-group mat-stretch-tabs="true" mat-align-tabs="center">
+    <mat-tab label="Статистика заказов">
+      <app-statictics/>
+    </mat-tab>
+    <mat-tab label="Управление пользователями">
+      <app-users/>
+    </mat-tab>
+  </mat-tab-group>
+
+  <button (click)="GoToMain()" class="button-base">На главную</button>
+  <button (click)="Logout()" class="button-base mx-3 exit">Выйти</button>
+</body>

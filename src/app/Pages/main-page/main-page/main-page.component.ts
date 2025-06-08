@@ -15,8 +15,7 @@ import {RecomendationsServiceService} from '../../../Data/Services/recomendation
     ProductCardComponent,
     SellingItemComponent,
     CustomHeaderComponent,
-    FooterComponent,
-    NgOptimizedImage
+    FooterComponent
   ],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css'

@@ -1,0 +1,26 @@
+<h4>Топ 5 товаров по количеству продаж</h4>
+<div class="chart">
+  <apx-chart [series]="chartOptions.series"
+             [chart]="chartOptions.chart"
+             [labels]="chartOptions.labels"
+             [responsive]="chartOptions.responsive" #Chart>
+  </apx-chart>
+</div>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Название</th>
+    <th>Остаток на складе</th>
+    <th>Кол-во проданных</th>
+  </tr>
+  </thead>
+  <tbody>
+    @for (product of products; track product.productName) {
+      <tr>
+        <td>{{product.productName}}</td>
+        <td>{{product.countInStock}}</td>
+        <td>{{product.countOutOfStock}}</td>
+      </tr>
+    }
+  </tbody>
+</table>
