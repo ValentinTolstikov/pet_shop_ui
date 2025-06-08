@@ -32,6 +32,7 @@ export class ProfilePageComponent implements OnInit {
   Username: string = '';
   Email: string = '';
   Photo: string = '';
+  IsAdmin: boolean = false;
 
   constructor(private authService: AuthService, private router: Router, private userService: UserServiceService) {
   }
@@ -42,10 +43,16 @@ export class ProfilePageComponent implements OnInit {
       this.Email = userInfo.email;
       this.Photo = userInfo.photo;
     });
+
+    this.IsAdmin = this.authService.isAdmin();
   }
 
   Logout($event: MouseEvent) {
     this.authService.logout();
     this.router.navigate(['/login']);
+  }
+
+  GoToAdminPg($event: MouseEvent) {
+    this.router.navigate(['/admin']);
   }
 }

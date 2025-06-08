@@ -11,6 +11,10 @@
             <p class="email">{{Email}}</p>
           </div>
         </div>
+        @if(IsAdmin)
+        {
+          <button (click)="GoToAdminPg($event)" class="button-base">Администрирование</button>
+        }
         <button (click)="Logout($event)" class="logout-button">Выйти из аккаунта</button>
       </mat-card>
     </div>

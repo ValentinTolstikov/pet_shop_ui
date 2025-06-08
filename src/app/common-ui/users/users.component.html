@@ -1,6 +1,6 @@
 <h4>Управление пользователями</h4>
-<p>Поиск по имени</p>
-<input value="{{SearchText}}" (input)="SortUsers($event)">
+<p class="m-0">Поиск по имени</p>
+<input value="{{searchText}}" (input)="SortUsers($event)" #searchInput>
 <table class="table">
   <thead>
   <tr>
@@ -12,17 +12,26 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>Victor victorov</td>
-    <td>victor&#64;victor.ru</td>
-    <td>User</td>
-    <td>Active</td>
-    <td>
-      <div class="flex-container">
-        <p class="m-0">Активен</p>
-        <mat-checkbox/>
-      </div>
-    </td>
-  </tr>
+    @for (user of users; track user.username) {
+      <tr>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.role}}</td>
+        <td>{{user.status}}</td>
+        <td>
+          @if (user.status=='Active') {
+            <div class="flex-container">
+              <p class="m-0">Активен</p>
+              <mat-checkbox (change)="Change(user.username)" checked #cbChanged/>
+            </div>
+          } @else {
+            <div class="flex-container">
+              <p class="m-0">Активен</p>
+              <mat-checkbox (change)="Change(user.username)" #cbChanged/>
+            </div>
+          }
+        </td>
+      </tr>
+    }
   </tbody>
 </table>
