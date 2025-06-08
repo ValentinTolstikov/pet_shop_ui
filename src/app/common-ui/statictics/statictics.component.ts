@@ -24,21 +24,17 @@ export class StaticticsComponent implements OnInit {
   public products: ProductStatisticResponse[] = [];
 
   ngOnInit() {
-    this.updateChart();
+    //this.updateChart();
   }
 
   constructor(private admService: AdminService) {
     this.chartOptions = {
       series: [
-        {
-          name: 'Sales',
-          data: [1,2]
-        }
       ],
       chart: {
-        type: "donut"
+        type: "donut",
       },
-      labels: [1],
+      labels: [],
       responsive: [
         {
           breakpoint: 980,
@@ -54,7 +50,7 @@ export class StaticticsComponent implements OnInit {
       ]
     };
 
-    //this.updateChart();
+    this.updateChart();
   }
 
   private updateChart() {

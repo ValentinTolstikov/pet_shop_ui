@@ -130,6 +130,7 @@ export class CardPageComponent implements OnDestroy {
 
   selectedIndex = 1;
   address: UserAddressResponse|null = null;
+  IsModalVisible: string = "none";
 
   ChangeAddress($event: MouseEvent, index: number) {
     this.selectedIndex = index;
@@ -148,7 +149,12 @@ export class CardPageComponent implements OnDestroy {
       this.cartService.ClearCart();
       this.loadData().then(r => {
         this.IsLoaded = true;
+        this.IsModalVisible = "flex";
       });
     });
+  }
+
+  CloseModal($event: MouseEvent) {
+    this.IsModalVisible = "none";
   }
 }

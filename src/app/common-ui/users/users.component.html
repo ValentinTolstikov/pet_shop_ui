@@ -1,6 +1,7 @@
 <h4>Управление пользователями</h4>
 <p class="m-0">Поиск по имени</p>
 <input value="{{searchText}}" (input)="SortUsers($event)" #searchInput>
+<app-loader [loading]="LoaderVisible"></app-loader>
 <table class="table">
   <thead>
   <tr>
@@ -22,12 +23,12 @@
           @if (user.status=='Active') {
             <div class="flex-container">
               <p class="m-0">Активен</p>
-              <mat-checkbox (change)="Change(user.username)" checked #cbChanged/>
+              <mat-checkbox (change)="Change(user.username,$event)" checked #cbChanged/>
             </div>
           } @else {
             <div class="flex-container">
               <p class="m-0">Активен</p>
-              <mat-checkbox (change)="Change(user.username)" #cbChanged/>
+              <mat-checkbox (change)="Change(user.username,$event)" #cbChanged/>
             </div>
           }
         </td>

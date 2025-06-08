@@ -2,6 +2,13 @@
 
 <app-loader [loading]="!IsLoaded"></app-loader>
 
+<div class="modal" style="display: {{IsModalVisible}}">
+  <div class="content">
+    <p>Ваш заказ успешно сформирован</p>
+    <button (click)="CloseModal($event)" class="button-base">Закрыть</button>
+  </div>
+</div>
+
 @if (selling_items.length>0) {
   <div class="pg-cnt">
     <mat-card class="container">
