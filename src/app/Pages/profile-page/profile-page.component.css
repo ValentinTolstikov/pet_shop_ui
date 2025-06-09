@@ -90,3 +90,7 @@ img{
 mat-card {
   padding: 12px;
 }
+
+body,html{
+  height: 90vh;
+}

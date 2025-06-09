@@ -7,6 +7,7 @@ export type ChartOptions = {
   series: ApexNonAxisChartSeries;
   chart: ApexChart;
   responsive: ApexResponsive[];
+  xaxis: ApexXAxis;
   labels: any;
 };
 
@@ -20,37 +21,43 @@ export type ChartOptions = {
 })
 export class StaticticsComponent implements OnInit {
   @ViewChild("Chart") chart: ChartComponent | any;
-  public chartOptions: Partial<ChartOptions> | any;
+  public chartOptions: Partial<ChartOptions> | any = {
+    series: [
+    ],
+    chart: {
+      type: "donut",
+    },
+    labels: [],
+    xaxis: {
+      labels: {
+        style:{
+          colors: ['red', 'green', 'blue']
+        }
+      }
+    },
+    responsive: [
+      {
+        breakpoint: 980,
+        options: {
+          chart: {
+            width: 400
+          },
+          legend: {
+            position: "bottom"
+          }
+        }
+      }
+    ]
+  };
   public products: ProductStatisticResponse[] = [];
 
   ngOnInit() {
-    //this.updateChart();
+    this.updateChart();
+    window.dispatchEvent(new Event('resize'))
   }
 
   constructor(private admService: AdminService) {
-    this.chartOptions = {
-      series: [
-      ],
-      chart: {
-        type: "donut",
-      },
-      labels: [],
-      responsive: [
-        {
-          breakpoint: 980,
-          options: {
-            chart: {
-              width: 400
-            },
-            legend: {
-              position: "bottom"
-            }
-          }
-        }
-      ]
-    };
-
-    this.updateChart();
+    //this.updateChart();
   }
 
   private updateChart() {
