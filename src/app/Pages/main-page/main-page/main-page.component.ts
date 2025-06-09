@@ -45,7 +45,7 @@ export class MainPageComponent {
   }
 
   private async LoadProducts(): Promise<void> {
-    let prods = this.recomendationsService.getReco(4);
+    let prods = this.recomendationsService.getReco(8);
     prods.subscribe(products => {
       products.forEach(product => {
         let newProd: selling_item = {id:product.id, name:product.title, image:"/Assets/Imgs/forcats.jpg", price: product.price, description:product.description};
