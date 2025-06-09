@@ -1,12 +1,16 @@
 <div class="container">
-  <h4>Город</h4>
-  <input value="{{address?.city}}">
-  <h4>Улица</h4>
-  <input value="{{address?.streat}}">
-  <h4>Дом</h4>
-  <input value="{{address?.house}}">
-  <h4>Дополнительная инф-я</h4>
-  <input value="{{address?.houseAdditional}}">
-  <mat-divider/>
-  <button class="button-base">Сохранить</button>
+  <form (ngSubmit)="onSubmit($event)"
+        [formGroup]="form">
+    <h4>Город</h4>
+    <input formControlName="city" required minlength="3" value="{{address?.city}}">
+    <h4>Улица</h4>
+    <input formControlName="streat" required minlength="3" value="{{address?.streat}}">
+    <h4>Дом</h4>
+    <input formControlName="house" required minlength="3" value="{{address?.house}}">
+    <h4>Дополнительная инф-я</h4>
+    <input formControlName="houseAdd" required minlength="3" value="{{address?.houseAdditional}}">
+    <mat-divider/>
+    <p style="color:red">{{errormsg}}</p>
+    <button type="submit" class="button-base">Сохранить</button>
+  </form>
 </div>

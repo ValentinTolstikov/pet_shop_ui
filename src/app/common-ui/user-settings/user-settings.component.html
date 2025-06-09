@@ -2,12 +2,16 @@
   <h2>Настройки аккаунта</h2>
   <p>В этом месте вы можете изменить настройки своего аккаунта.</p>
   <mat-divider class="divider"/>
-  <h4>Старый пароль</h4>
-  <input>
-  <h4>Новый пароль</h4>
-  <input>
-  <h4>Повтор пароля</h4>
-  <input>
-  <mat-divider class="divider"/>
-  <button class="button-base">Сменить пароль</button>
+  <form (ngSubmit)="onSubmit($event)"
+        [formGroup]="form">
+    <h4>Старый пароль</h4>
+    <input type="password" required minlength="3" formControlName="oldPassw">
+    <h4>Новый пароль</h4>
+    <input type="password" required [minLength]="3" formControlName="newPassw">
+    <h4>Повтор пароля</h4>
+    <input type="password" required [minLength]="3" formControlName="newPasswRep">
+    <mat-divider class="divider"/>
+    <p style="color:red">{{errormsg}}</p>
+    <button type="submit" class="button-base">Сменить пароль</button>
+  </form>
 </div>

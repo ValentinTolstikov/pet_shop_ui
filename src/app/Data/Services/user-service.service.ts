@@ -25,6 +25,6 @@ export class UserServiceService extends ServiceBaseService {
 
   public updateUserAddress(userAddress: UserAddressResponse)
   {
-    return this.http.post(this.getConnectionString()+'Account/UpdateUserAddress', userAddress);
+    return this.http.post(this.getConnectionString()+'Account/UpdateUserAddress', userAddress, {headers:{'Content-Type': 'application/json'}});
   }
 }
